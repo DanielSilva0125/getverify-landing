@@ -14,7 +14,7 @@
   --color-light-teal: var(--color-light-teal);
   --color-accent: var(--color-accent);
   --color-light-gray: var(--color-light-gray);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: "Figtree", sans-serif;
   --font-mono: var(--font-geist-mono);
 }
 

@@ -19,7 +19,7 @@ export default function Home() {
 
       <main className="relative flex flex-col items-center px-6 pt-20 pb-24 sm:pt-28 sm:pb-36 lg:pt-16">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 rounded-full border border-accent/15 bg-accent/[0.06] px-3.5 py-1.5 text-[13px] text-accent mb-10">
+        <div className="inline-flex items-center gap-2 rounded-full border border-accent/15 bg-accent/[0.06] px-3.5 py-1.5 text-[13px] text-accent mb-8">
           <span className="font-semibold">Nuevo</span>
           <span className="text-accent/30">|</span>
           <span className="font-medium text-accent/70 inline-flex items-center gap-1">
@@ -29,7 +29,7 @@ export default function Home() {
         </div>
 
         {/* Heading */}
-        <h1 className="max-w-[790px] text-center text-[36px] leading-[1.15] sm:text-[48px] sm:leading-[1.12] lg:text-[56px] lg:leading-[1.05] font-bold tracking-[-0.025em] text-dark-teal mb-5">
+        <h1 className="max-w-[790px] text-center text-[36px] leading-[1.15] sm:text-[48px] sm:leading-[1.12] lg:text-[56px] lg:leading-[1.04] font-bold tracking-[-0.025em] text-dark-teal mb-5">
           Controla el cumplimiento <br/>de contratistas{" "}<br/>
           <em className="text-accent italic">desde un solo lugar.</em>
         </h1>
