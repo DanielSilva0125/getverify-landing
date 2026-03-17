@@ -1,5 +1,7 @@
 "use client";
 
+import { Button } from "@heroui/button";
+
 export default function Navbar() {
   return (
     <header className="w-full border-b border-dark-teal/[0.06]">
@@ -23,19 +25,24 @@ export default function Navbar() {
         </div>
 
         {/* Right: Actions */}
-        <div className="flex items-center gap-5">
-          <a
+        <div className="flex items-center">
+          <Button
+            as="a"
             href="#"
-            className="hidden sm:inline text-[13px] font-medium text-dark-teal/50 hover:text-dark-teal transition-colors"
+            variant="light"
+            className="hidden sm:inline-flex text-[13px] font-medium text-dark-teal/50 hover:text-dark-teal rounded-2xl"
           >
             Iniciar sesion
-          </a>
-          <a
+          </Button>
+          {/* <Button
+            as="a"
             href="#waitlist"
-            className="text-[13px] font-medium text-white bg-accent hover:bg-accent/90 transition-all px-4 py-2 rounded-full"
+            size="sm"
+            radius="lg"
+            className="btn-glow text-[13px] font-medium text-white bg-accent hover:bg-[#5570e0] px-4"
           >
             Unirse a la lista
-          </a>
+          </Button> */}
         </div>
       </nav>
     </header>

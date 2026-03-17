@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@config "../tailwind.config.ts";
+
 :root {
   --color-dark-teal: #15292F;
   --color-light-teal: #67B4C1;

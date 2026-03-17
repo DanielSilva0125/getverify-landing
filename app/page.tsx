@@ -1,4 +1,5 @@
 import { ChevronRight } from "lucide-react";
+import { Button } from "@heroui/button";
 import Navbar from "./components/Navbar";
 import MacWindowMockup from "./components/MacWindowMockup";
 
@@ -41,19 +42,22 @@ export default function Home() {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center gap-3 mb-20 sm:mb-24">
-          <a
+          <Button
+            as="a"
             href="#waitlist"
-            className="btn-glow inline-flex items-center bg-accent hover:bg-[#5570e0] transition-all text-white font-medium px-6 py-3 rounded-full text-[14px] tracking-[-0.01em]"
+            className="btn-glow bg-accent hover:bg-[#5570e0] text-white font-medium px-6 h-11 text-[14px] tracking-[-0.01em] rounded-2xl"
           >
             Unirse a la lista de espera
             <span className="ml-2 text-white/70">&rarr;</span>
-          </a>
-          <a
+          </Button>
+          <Button
+            as="a"
             href="#learn-more"
-            className="inline-flex items-center border border-dark-teal/12 hover:border-dark-teal/25 bg-white hover:bg-dark-teal/[0.02] transition-all text-dark-teal/70 font-medium px-6 py-3 rounded-full text-[14px] tracking-[-0.01em]"
+            variant="bordered"
+            className="border-dark-teal/12 hover:border-dark-teal/25 bg-white hover:bg-dark-teal/[0.02] text-dark-teal/70 font-medium px-6 h-11 text-[14px] tracking-[-0.01em] rounded-2xl"
           >
             Conocer mas
-          </a>
+          </Button>
         </div>
 
         {/* Mac Window Mockup */}
