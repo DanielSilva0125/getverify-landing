@@ -3,6 +3,7 @@ import { Button } from "@heroui/button";
 import Navbar from "./components/Navbar";
 import MacWindowMockup from "./components/MacWindowMockup";
 import PainPoints from "./components/PainPoints";
+import Features from "./components/Features";
 
 export default function Home() {
   return (
@@ -66,6 +67,7 @@ export default function Home() {
       </main>
 
       <PainPoints />
+      <Features />
     </div>
   );
 }
