@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Hello world",
-  description: "Minimal starter page",
+  title: "Verify — Cumplimiento documental centralizado",
+  description:
+    "Centraliza el cumplimiento documental de tus contratistas. Gestiona documentos, recibe alertas de vencimiento y visualiza el estado de cada proveedor en tiempo real.",
 };
 
 export default function RootLayout({
@@ -23,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
