@@ -26,13 +26,12 @@ export default function PainPoints() {
     <section className="px-6 pt-10 pb-20 sm:pt-4 sm:pb-28">
       <div className="mx-auto max-w-4xl text-center mb-14">
         <h2 className="text-[28px] sm:text-[36px] lg:text-[40px] tracking-[-0.025em] text-dark-teal leading-[1.15] mb-4 font-normal">
-          El cumplimiento no se supone.{" "}
-          <br className="hidden sm:block" />
+          El cumplimiento no se supone.
+          <br/>
           <span className="font-bold">Se verifica.</span>
         </h2>
         <p className="text-[16px] sm:text-[18px] leading-[1.6] text-dark-teal/50 max-w-[540px] mx-auto">
-          Sin un sistema claro, la documentacion se dispersa y el riesgo se
-          detecta tarde.
+          Sin un sistema claro, la documentacion se dispersa <br/>y el riesgo se detecta tarde.
         </p>
       </div>
 
