@@ -2,6 +2,7 @@ import { ChevronRight } from "lucide-react";
 import { Button } from "@heroui/button";
 import Navbar from "./components/Navbar";
 import MacWindowMockup from "./components/MacWindowMockup";
+import PainPoints from "./components/PainPoints";
 
 export default function Home() {
   return (
@@ -17,7 +18,7 @@ export default function Home() {
 
       <Navbar />
 
-      <main className="relative flex flex-col items-center px-6 pt-20 pb-24 sm:pt-28 sm:pb-36 lg:pt-16">
+      <main className="relative flex flex-col items-center px-6 pt-20 pb-16 sm:pt-28 sm:pb-20 lg:pt-16">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 rounded-full border border-accent/15 bg-accent/[0.06] px-3.5 py-1.5 text-[13px] text-accent mb-8">
           <span className="font-semibold">Nuevo</span>
@@ -41,7 +42,7 @@ export default function Home() {
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row items-center gap-3 mb-20 sm:mb-24">
+        <div className="flex flex-col sm:flex-row items-center gap-3 mb-20 sm:mb-16">
           <Button
             as="a"
             href="#waitlist"
@@ -63,6 +64,8 @@ export default function Home() {
         {/* Mac Window Mockup */}
         <MacWindowMockup />
       </main>
+
+      <PainPoints />
     </div>
   );
 }
