@@ -5,6 +5,7 @@ import MacWindowMockup from "./components/MacWindowMockup";
 import PainPoints from "./components/PainPoints";
 import Features from "./components/Features";
 import MarketSegments from "./components/MarketSegments";
+import CallToAction from "./components/CallToAction";
 
 export default function Home() {
   return (
@@ -70,6 +71,7 @@ export default function Home() {
       <PainPoints />
       <Features />
       <MarketSegments />
+      <CallToAction />
     </div>
   );
 }
