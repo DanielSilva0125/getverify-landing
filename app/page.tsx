@@ -74,7 +74,7 @@ export default function Home() {
       <CallToAction />
 
       {/* Footer Placeholder */}
-      <footer className="w-full h-[400px] bg-white flex items-center justify-center">
+      <footer className="w-full h-[400px] bg-gray-300 flex items-center justify-center">
         <div className="w-48 h-8 rounded-full bg-dark-teal/[0.03]" />
       </footer>
     </div>
