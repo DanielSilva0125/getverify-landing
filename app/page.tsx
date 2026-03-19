@@ -1,4 +1,4 @@
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, ArrowRight } from "lucide-react";
 import { Button } from "@heroui/button";
 import Navbar from "./components/Navbar";
 import MacWindowMockup from "./components/MacWindowMockup";
@@ -7,6 +7,7 @@ import Features from "./components/Features";
 import MarketSegments from "./components/MarketSegments";
 import CallToAction from "./components/CallToAction";
 import Footer from "./components/Footer";
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-white relative overflow-hidden">
@@ -52,7 +53,7 @@ export default function Home() {
             className="btn-glow bg-accent hover:bg-[#5570e0] text-white font-medium px-6 h-11 text-[14px] tracking-[-0.01em] rounded-2xl"
           >
             Unirse a la lista de espera
-            <span className="ml-2 text-white/70">&rarr;</span>
+            <ArrowRight className="ml-1 w-4 h-4 text-white/80" strokeWidth={2} />
           </Button>
           <Button
             as="a"
