@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import MacWindowMockup from "./components/MacWindowMockup";
 import PainPoints from "./components/PainPoints";
 import Features from "./components/Features";
+import MarketSegments from "./components/MarketSegments";
 
 export default function Home() {
   return (
@@ -31,8 +32,8 @@ export default function Home() {
         </div>
 
         {/* Heading */}
-        <h1 className="max-w-[790px] text-center text-[36px] leading-[1.15] sm:text-[48px] sm:leading-[1.12] lg:text-[56px] lg:leading-[1.04] font-bold tracking-[-0.025em] text-dark-teal mb-5">
-          Controla el cumplimiento <br/>de contratistas{" "}<br/>
+        <h1 className="max-w-[790px] text-center text-[36px] leading-[1.15] sm:text-[48px] sm:leading-[1.12] lg:text-[56px] lg:leading-[1.04] font-semibold tracking-[-0.025em] text-dark-teal mb-5">
+          Controla el cumplimiento <br />de contratistas{" "}<br />
           <em className="text-accent italic">desde un solo lugar.</em>
         </h1>
 
@@ -68,6 +69,7 @@ export default function Home() {
 
       <PainPoints />
       <Features />
+      <MarketSegments />
     </div>
   );
 }
