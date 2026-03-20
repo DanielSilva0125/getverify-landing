@@ -1,8 +1,16 @@
+"use client";
+
 import { SignIn } from "@clerk/nextjs";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
+import { motion } from "framer-motion";
+import { useState } from "react";
+
+const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
 
 export default function Page() {
+  const [phase, setPhase] = useState<1 | 2>(1);
+
   return (
     <div className="min-h-screen bg-[#FAFAFA] relative overflow-hidden flex flex-col items-center justify-center selection:bg-accent/30">
 
@@ -20,7 +28,12 @@ export default function Page() {
       />
 
       {/* Header Back Button */}
-      <header className="absolute top-0 left-0 w-full p-6 lg:p-10 z-20">
+      <motion.header
+        className="absolute top-0 left-0 w-full p-6 lg:p-10 z-20"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.2, ease }}
+      >
         <Link
           href="/"
           className="group inline-flex items-center gap-2 text-[14px] font-medium text-dark-teal/60 hover:text-dark-teal transition-colors"
@@ -28,39 +41,72 @@ export default function Page() {
           <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-0.5" strokeWidth={2} />
           <span>Volver al inicio</span>
         </Link>
-      </header>
+      </motion.header>
 
       {/* Main Content */}
-      <main className="relative z-10 w-full flex flex-col items-center px-4 pt-12 pb-24">
-        {/* Brand & Greeting */}
-        <div className="flex flex-col items-center mb-8 text-center">
-          <Link href="/" className="flex items-center gap-2 mb-6 group">
-            <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center text-white shadow-xl shadow-accent/20 group-hover:scale-105 group-hover:shadow-accent/30 transition-all duration-300">
-              <span className="font-bold text-[20px]">V</span>
-            </div>
-          </Link>
+      <main className="relative z-10 w-full flex flex-col items-center justify-center px-4">
 
-          <h1 className="text-[28px] sm:text-[32px] font-semibold tracking-[-0.02em] text-dark-teal mb-2">
+        {/* Wrapper — holds brand + clerk as one unit, shifts up on phase 2 */}
+        <motion.div
+          className="relative flex flex-col items-center text-center translate-y-6"
+          initial={{ y: 0 }}
+          animate={{ y: phase === 2 ? -220 : 0 }}
+          transition={{ duration: 2, ease }}
+        >
+          {/* Brand & Greeting */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, ease }}
+            onAnimationComplete={() => setTimeout(() => setPhase(2), 500)}
+          >
+            <Link href="/" className="flex items-center gap-2 mb-6 group">
+              <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center text-white shadow-xl shadow-accent/20 group-hover:scale-105 group-hover:shadow-accent/30 transition-all duration-300">
+                <span className="font-bold text-[20px]">V</span>
+              </div>
+            </Link>
+          </motion.div>
+
+          <motion.h1
+            className="text-[28px] sm:text-[32px] font-semibold tracking-[-0.02em] text-dark-teal mb-2"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15, ease }}
+          >
             Bienvenido a Verify
-          </h1>
-          <p className="text-[15px] sm:text-[16px] text-dark-teal/60 font-medium max-w-[340px]">
+          </motion.h1>
+
+          <motion.p
+            className="text-[15px] sm:text-[16px] text-dark-teal/60 font-medium max-w-[340px]"
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.25, ease }}
+          >
             Ingresa a tu cuenta para gestionar el cumplimiento de tus contratistas.
-          </p>
-        </div>
+          </motion.p>
 
-        {/* Clerk Component Wrapper */}
-        <div className="w-full flex justify-center">
-          <SignIn
-            appearance={{
-              elements: {
-                cardBox: "shadow-xl! shadow-accent/10!",
-                card: "shadow-none! border border-accent/10 ring-1 ring-accent/5",
-              }
+          {/* Clerk — absolutely positioned so async mount doesn't cause layout shift */}
+          <motion.div
+            className="w-full flex justify-center absolute left-0 right-0 mt-4"
+            style={{ top: "100%", paddingTop: 16 }}
+            initial={{ opacity: 0, y: 24 }}
+            animate={{
+              opacity: phase === 2 ? 1 : 0,
+              y: phase === 2 ? 0 : 24,
             }}
-          />
-        </div>
+            transition={{ duration: 0.7, delay: 0.15, ease }}
+          >
+            <SignIn
+              appearance={{
+                elements: {
+                  cardBox: "shadow-xl! shadow-accent/10!",
+                  card: "shadow-none! border border-accent/10 ring-1 ring-accent/5",
+                }
+              }}
+            />
+          </motion.div>
+        </motion.div>
       </main>
-
     </div>
   );
 }
