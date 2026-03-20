@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Figtree, Geist_Mono } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
+import { esES } from "@clerk/localizations";
 //
 import Providers from "./providers";
 import "./globals.css";
@@ -29,9 +30,10 @@ export default function RootLayout({
   return (
     <html lang="es" className={figtree.className}>
       <body className={`${geistMono.variable} antialiased`}>
-        <ClerkProvider>
+        <ClerkProvider localization={esES}>
           <Providers>{children}</Providers>
         </ClerkProvider>
+
       </body>
     </html>
   );
