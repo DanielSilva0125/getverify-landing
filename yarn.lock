@@ -198,6 +198,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@clerk/localizations@npm:^4.2.3":
+  version: 4.2.3
+  resolution: "@clerk/localizations@npm:4.2.3"
+  dependencies:
+    "@clerk/shared": "npm:^4.3.2"
+  checksum: 10c0/9487324982a58ef74d39bda25fb5ebaade3b266d24862192950da17aaaac1f2d820d50b123ef5bd787dd1b81d7b3a90bf79328c06199255caaa1ee0ac0a2eded
+  languageName: node
+  linkType: hard
+
 "@clerk/nextjs@npm:^7.0.5":
   version: 7.0.5
   resolution: "@clerk/nextjs@npm:7.0.5"
@@ -246,6 +255,27 @@ __metadata:
     react-dom:
       optional: true
   checksum: 10c0/ef958da5939c1be473a9d31c7a752caca281952be1adeaf69a1b11e28c4972a073ae4315c0f7e4e7c2eca06a3cde1a1f1aec4b450ab5549ac4d73b7a54feba23
+  languageName: node
+  linkType: hard
+
+"@clerk/shared@npm:^4.3.2":
+  version: 4.3.2
+  resolution: "@clerk/shared@npm:4.3.2"
+  dependencies:
+    "@tanstack/query-core": "npm:5.90.16"
+    dequal: "npm:2.0.3"
+    glob-to-regexp: "npm:0.4.1"
+    js-cookie: "npm:3.0.5"
+    std-env: "npm:^3.9.0"
+  peerDependencies:
+    react: ^18.0.0 || ~19.0.3 || ~19.1.4 || ~19.2.3 || ~19.3.0-0
+    react-dom: ^18.0.0 || ~19.0.3 || ~19.1.4 || ~19.2.3 || ~19.3.0-0
+  peerDependenciesMeta:
+    react:
+      optional: true
+    react-dom:
+      optional: true
+  checksum: 10c0/249b0fb26a2ba85fa368cc121e7e2b1b96edd7db6205350d96f1b0d64f8bcfbdbf678cdf33dbd8f1ad700b046dc54be9b6912df9db59c4f9185cb1a6efb980ed
   languageName: node
   linkType: hard
 
@@ -1761,6 +1791,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "app@workspace:."
   dependencies:
+    "@clerk/localizations": "npm:^4.2.3"
     "@clerk/nextjs": "npm:^7.0.5"
     "@heroui/button": "npm:^2.2.32"
     "@heroui/system": "npm:^2.4.28"

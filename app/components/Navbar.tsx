@@ -27,20 +27,11 @@ export default function Navbar() {
               as="a"
               href="#"
               variant="light"
-              className="hidden sm:inline-flex text-[13px] font-medium text-dark-teal/50 hover:text-dark-teal rounded-2xl"
+              className="inline-flex text-[13px] font-medium text-dark-teal/50 hover:text-dark-teal rounded-2xl"
             >
-              Iniciar sesion
+              Iniciar sesión
             </Button>
           </SignInButton>
-          {/* <Button
-            as="a"
-            href="#waitlist"
-            size="sm"
-            radius="lg"
-            className="btn-glow text-[13px] font-medium text-white bg-accent hover:bg-[#5570e0] px-4"
-          >
-            Unirse a la lista
-          </Button> */}
         </div>
       </nav>
     </header>
