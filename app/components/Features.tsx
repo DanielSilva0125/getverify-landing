@@ -56,15 +56,9 @@ function FeatureCard({
   return (
     <div className="bg-light-gray border border-dark-teal/[0.06] rounded-2xl p-5">
       <div
-        className={`relative bg-white rounded-xl w-full flex items-center justify-center overflow-hidden border border-dark-teal/[0.06] ${compact ? "h-28" : "h-36"
+        className={`relative rounded-xl w-full flex items-center justify-center overflow-hidden ${compact ? "h-28" : "h-36"
           } mb-4`}
       >
-        <div className="absolute top-3 left-4 w-1.5 h-1.5 rounded-full bg-dark-teal/[0.07]" />
-        <div className="absolute top-4 right-6 w-1 h-1 rounded-full bg-accent/[0.15]" />
-        <div className="absolute bottom-3 left-6 w-6 h-0.5 rounded-full bg-dark-teal/[0.05]" />
-        <div className="absolute bottom-3 right-4 w-1.5 h-1.5 rounded-full bg-dark-teal/[0.06]" />
-
-        <Icon className="w-7 h-7 text-accent" strokeWidth={1.5} />
       </div>
 
       <h3 className="text-[15px] font-semibold text-dark-teal mb-1">
