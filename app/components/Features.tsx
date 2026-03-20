@@ -56,9 +56,8 @@ function FeatureCard({
   return (
     <div className="bg-light-gray border border-dark-teal/[0.06] rounded-2xl p-5">
       <div
-        className={`relative bg-white rounded-xl w-full flex items-center justify-center overflow-hidden border border-dark-teal/[0.06] ${
-          compact ? "h-28" : "h-36"
-        } mb-4`}
+        className={`relative bg-white rounded-xl w-full flex items-center justify-center overflow-hidden border border-dark-teal/[0.06] ${compact ? "h-28" : "h-36"
+          } mb-4`}
       >
         <div className="absolute top-3 left-4 w-1.5 h-1.5 rounded-full bg-dark-teal/[0.07]" />
         <div className="absolute top-4 right-6 w-1 h-1 rounded-full bg-accent/[0.15]" />
@@ -80,7 +79,7 @@ function FeatureCard({
 
 export default function Features() {
   return (
-    <section className="px-6 pb-20 sm:pb-28">
+    <section className="px-6 pb-20 sm:pt-14 sm:pb-28 bg-[#F9FBFC]">
       <div className="mx-auto max-w-4xl text-center mb-8">
         <span className="inline-block rounded-full bg-accent/[0.08] px-3.5 py-1 text-[13px] font-semibold text-accent mb-4">
           Plataforma
