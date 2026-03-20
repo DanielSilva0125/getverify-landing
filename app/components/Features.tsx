@@ -1,6 +1,7 @@
-//
+"use client";
 
 import { FileText, Bell, Download } from "lucide-react";
+import ScrollReveal from "./ScrollReveal";
 
 const topFeatures = [
   {
@@ -221,7 +222,7 @@ function FeatureCard({
   compact?: boolean;
 }) {
   return (
-    <div className="bg-light-gray border border-dark-teal/[0.06] rounded-2xl p-5">
+    <div className="bg-light-gray border border-dark-teal/[0.06] rounded-2xl p-5 h-full">
       <div
         className={`relative rounded-xl w-full flex items-center justify-center overflow-hidden ${compact ? "h-28" : "h-36"} mb-4`}
       >
@@ -241,7 +242,7 @@ function FeatureCard({
 export default function Features() {
   return (
     <section className="px-6 pt-10 sm:pt-14 pb-20 sm:pb-28 bg-[#F9FBFC]">
-      <div className="mx-auto max-w-4xl text-center mb-8">
+      <ScrollReveal className="mx-auto max-w-4xl text-center mb-8">
         <span className="inline-block rounded-full bg-accent/[0.08] px-3.5 py-1 text-[13px] font-semibold text-accent mb-4">
           Plataforma
         </span>
@@ -252,20 +253,24 @@ export default function Features() {
         <p className="text-[15px] sm:text-[17px] leading-[1.6] text-dark-teal/50 max-w-[500px] mx-auto">
           Herramientas diseñadas para cubrir cada punto critico del cumplimiento documental.
         </p>
-      </div>
+      </ScrollReveal>
 
       <div className="mx-auto max-w-4xl flex flex-col gap-4">
         {/* Top row: 2 large cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {topFeatures.map((feature) => (
-            <FeatureCard key={feature.title} {...feature} />
+          {topFeatures.map((feature, i) => (
+            <ScrollReveal key={feature.title} delay={i * 0.1} className="h-full">
+              <FeatureCard {...feature} />
+            </ScrollReveal>
           ))}
         </div>
 
         {/* Bottom row: 3 smaller cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          {bottomFeatures.map((feature) => (
-            <FeatureCard key={feature.title} {...feature} compact />
+          {bottomFeatures.map((feature, i) => (
+            <ScrollReveal key={feature.title} delay={i * 0.1} className="h-full">
+              <FeatureCard {...feature} compact />
+            </ScrollReveal>
           ))}
         </div>
       </div>

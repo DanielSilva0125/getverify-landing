@@ -2,8 +2,8 @@
 
 
 - [ ] Mejorar colores de las cards en section "Verify", hacerlo consistente con las otras cards
-- [ ] Implementar UI mockup components para section "Plataforma"
 - [ ] Implementar dashboard ui mockup para hero section
+- [x] Implementar UI mockup components para section "Plataforma"
 
 - [ ] Waiting list setup
 - [ ] RRSS links setup and footer details

@@ -1,5 +1,8 @@
+"use client";
+
 import { Button } from "@heroui/button";
 import { ArrowUpRight } from "lucide-react";
+import ScrollReveal from "./ScrollReveal";
 
 export default function CallToAction() {
   return (
@@ -16,7 +19,7 @@ export default function CallToAction() {
 
       <div className="relative w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 lg:gap-10 items-start">
         {/* Left side: Heading and Badge */}
-        <div className="flex flex-col items-start h-full justify-end lg:pr-8 lg:pb-8 lg:pt-4 z-10">
+        <ScrollReveal direction="left" className="flex flex-col items-start h-full justify-end lg:pr-8 lg:pb-8 lg:pt-4 z-10">
           {/* Badge */}
           <div className="inline-flex items-center gap-2.5 rounded-full bg-accent/[0.08] px-4 py-2 text-[14px] sm:text-[15px] font-medium text-dark-teal mb-5 sm:mb-6">
             <div className="w-2.5 h-2.5 rounded-full bg-accent" />
@@ -28,10 +31,10 @@ export default function CallToAction() {
             <span className="text-accent">Control Inteligente</span><br />
             Operaciones Seguras.
           </h2>
-        </div>
+        </ScrollReveal>
 
         {/* Right side: iPhone Wireframe Card Mockup - Translated down to crop bottom corners */}
-        <div className="w-full max-w-[220px] sm:max-w-[245px] lg:max-w-[275px] mx-auto lg:ml-auto lg:mr-8 xl:mr-16 aspect-[9/19.5] relative -mb-[180px] sm:-mb-[190px] lg:-mb-[310px] translate-y-[16px] sm:translate-y-[24px] lg:translate-y-[5px]">
+        <ScrollReveal direction="right" delay={0.15} className="w-full max-w-[220px] sm:max-w-[245px] lg:max-w-[275px] mx-auto lg:ml-auto lg:mr-8 xl:mr-16 aspect-[9/19.5] relative -mb-[180px] sm:-mb-[190px] lg:-mb-[310px] translate-y-[16px] sm:translate-y-[24px] lg:translate-y-[5px]">
 
           {/* Wireframe Outer Chassis */}
           <div className="absolute inset-0 bg-dark-teal rounded-[40px] shadow-[0_32px_80px_-15px_rgba(0,0,0,0.18)] border-[2px] border-dark-teal/60" />
@@ -75,7 +78,7 @@ export default function CallToAction() {
           <div className="absolute top-[165px] -left-[2px] sm:-left-[3px] w-[2px] sm:w-[3px] h-10 bg-dark-teal rounded-l-sm" /> {/* Volume Down */}
           <div className="absolute top-[130px] -right-[2px] sm:-right-[3px] w-[2px] sm:w-[3px] h-14 bg-dark-teal rounded-r-sm" /> {/* Power Button */}
 
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );
