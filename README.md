@@ -7,7 +7,7 @@
 
 - [ ] Waiting list setup
 - [ ] RRSS links setup and footer details
-- [ ] Vercel deploy
-- [ ] Clerk login page design polishing
+- [x] Vercel deploy
+- [x] Clerk login page design polishing
 
 - [ ] Add animations, vercel analytics, seo and good stuff
