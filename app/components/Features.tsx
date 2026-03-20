@@ -1,20 +1,12 @@
-import {
-  FolderOpen,
-  BellRing,
-  BarChart3,
-  FileBarChart,
-  ShieldCheck,
-} from "lucide-react";
+//
 
 const topFeatures = [
   {
-    icon: FolderOpen,
     title: "Control documental centralizado",
     description:
       "Gestion estructurada de documentacion de empresas contratistas y trabajadores, con estados claros y trazabilidad.",
   },
   {
-    icon: BellRing,
     title: "Alertas automaticas de vencimiento",
     description:
       "Notificaciones proactivas que evitan incumplimientos antes de que se conviertan en un riesgo.",
@@ -23,19 +15,16 @@ const topFeatures = [
 
 const bottomFeatures = [
   {
-    icon: BarChart3,
     title: "Visibilidad en tiempo real",
     description:
       "Dashboards que muestran el cumplimiento por proveedor y detectan brechas criticas.",
   },
   {
-    icon: FileBarChart,
     title: "Reportes accionables",
     description:
       "Exportacion de informacion clave para auditorias, fiscalizaciones y decisiones.",
   },
   {
-    icon: ShieldCheck,
     title: "Cumplimiento por proyecto",
     description:
       "Segmenta la documentacion requerida por proyecto u operacion, adaptando requisitos segun contexto.",
@@ -43,12 +32,10 @@ const bottomFeatures = [
 ];
 
 function FeatureCard({
-  icon: Icon,
   title,
   description,
   compact,
 }: {
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement> & { strokeWidth?: number }>;
   title: string;
   description: string;
   compact?: boolean;
@@ -56,8 +43,7 @@ function FeatureCard({
   return (
     <div className="bg-light-gray border border-dark-teal/[0.06] rounded-2xl p-5">
       <div
-        className={`relative rounded-xl w-full flex items-center justify-center overflow-hidden ${compact ? "h-28" : "h-36"
-          } mb-4`}
+        className={`relative rounded-xl w-full flex items-center justify-center overflow-hidden ${compact ? "h-28" : "h-36"} mb-4`}
       >
       </div>
 
