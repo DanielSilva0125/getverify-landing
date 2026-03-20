@@ -5,7 +5,7 @@ import { ArrowLeft } from "lucide-react";
 export default function Page() {
   return (
     <div className="min-h-screen bg-[#FAFAFA] relative overflow-hidden flex flex-col items-center justify-center selection:bg-accent/30">
-      
+
       {/* Abstract Ambient Glows */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[1000px] h-[600px] opacity-80 pointer-events-none flex justify-center items-center z-0">
         <div className="absolute top-[10%] left-[20%] w-[400px] h-[400px] bg-accent/20 rounded-full mix-blend-multiply filter blur-[100px]" />
@@ -14,7 +14,7 @@ export default function Page() {
       </div>
 
       {/* SVG Noise Overlay */}
-      <div 
+      <div
         className="absolute inset-0 pointer-events-none opacity-[0.35] mix-blend-overlay z-0"
         style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg viewBox=\"0 0 200 200\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cfilter id=\"noiseFilter\"%3E%3CfeTurbulence type=\"fractalNoise\" baseFrequency=\"0.8\" numOctaves=\"3\" stitchTiles=\"stitch\"/%3E%3C/filter%3E%3Crect width=\"100%25\" height=\"100%25\" filter=\"url(%23noiseFilter)\"/%3E%3C/svg%3E')" }}
       />
@@ -39,7 +39,7 @@ export default function Page() {
               <span className="font-bold text-[20px]">V</span>
             </div>
           </Link>
-          
+
           <h1 className="text-[28px] sm:text-[32px] font-semibold tracking-[-0.02em] text-dark-teal mb-2">
             Bienvenido a Verify
           </h1>
@@ -50,17 +50,17 @@ export default function Page() {
 
         {/* Clerk Component Wrapper */}
         <div className="w-full flex justify-center">
-          <SignIn 
+          <SignIn
             appearance={{
               elements: {
-                cardBox: "shadow-none",
-                card: "shadow-2xl shadow-accent/30 border border-accent/10 ring-1 ring-accent/5",
+                cardBox: "shadow-xl! shadow-accent/10!",
+                card: "shadow-none! border border-accent/10 ring-1 ring-accent/5",
               }
             }}
           />
         </div>
       </main>
-      
+
     </div>
   );
 }

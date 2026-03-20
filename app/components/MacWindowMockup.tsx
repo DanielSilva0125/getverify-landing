@@ -10,7 +10,7 @@ export default function MacWindowMockup() {
         </div>
         <div className="flex-1 flex justify-center">
           <div className="bg-dark-teal/[0.04] text-dark-teal/40 text-[12px] font-medium px-3.5 py-[3px] rounded-md tracking-wide">
-            app.verify.com
+            app.getverify.cl
           </div>
         </div>
         <div className="w-[51px]" />
