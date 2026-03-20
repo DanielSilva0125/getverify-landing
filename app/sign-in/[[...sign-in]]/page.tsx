@@ -49,8 +49,8 @@ export default function Page() {
         {/* Wrapper — holds brand + clerk as one unit, shifts up on phase 2 */}
         <motion.div
           className="relative flex flex-col items-center text-center"
-          initial={{ y: 0 }}
-          animate={{ y: phase === 2 ? -160 : 0 }}
+          initial={{ y: 30 }}
+          animate={{ y: phase === 2 ? -190 : 30 }}
           transition={{ duration: 1.4, ease }}
         >
           {/* Brand & Greeting */}
