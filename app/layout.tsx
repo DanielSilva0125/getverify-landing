@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Figtree, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { ClerkProvider } from "@clerk/nextjs";
+//
 import Providers from "./providers";
+import "./globals.css";
 
 const figtree = Figtree({
   variable: "--font-figtree",
@@ -26,10 +28,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es" className={figtree.className}>
-      <body
-        className={`${geistMono.variable} antialiased`}
-      >
-        <Providers>{children}</Providers>
+      <body className={`${geistMono.variable} antialiased`}>
+        <ClerkProvider>
+          <Providers>{children}</Providers>
+        </ClerkProvider>
       </body>
     </html>
   );

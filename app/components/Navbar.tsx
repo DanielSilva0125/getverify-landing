@@ -1,6 +1,6 @@
 "use client";
-
 import { Button } from "@heroui/button";
+import { SignInButton } from "@clerk/nextjs";
 
 export default function Navbar() {
   return (
@@ -18,14 +18,20 @@ export default function Navbar() {
 
         {/* Right: Actions */}
         <div className="flex items-center">
-          <Button
-            as="a"
-            href="#"
-            variant="light"
-            className="hidden sm:inline-flex text-[13px] font-medium text-dark-teal/50 hover:text-dark-teal rounded-2xl"
+          <SignInButton
+            mode="redirect"
+            fallbackRedirectUrl="/dashboard"
+            forceRedirectUrl="/dashboard"
           >
-            Iniciar sesion
-          </Button>
+            <Button
+              as="a"
+              href="#"
+              variant="light"
+              className="hidden sm:inline-flex text-[13px] font-medium text-dark-teal/50 hover:text-dark-teal rounded-2xl"
+            >
+              Iniciar sesion
+            </Button>
+          </SignInButton>
           {/* <Button
             as="a"
             href="#waitlist"
