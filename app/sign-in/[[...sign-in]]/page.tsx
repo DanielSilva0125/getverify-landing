@@ -48,17 +48,17 @@ export default function Page() {
 
         {/* Wrapper — holds brand + clerk as one unit, shifts up on phase 2 */}
         <motion.div
-          className="relative flex flex-col items-center text-center translate-y-6"
+          className="relative flex flex-col items-center text-center"
           initial={{ y: 0 }}
-          animate={{ y: phase === 2 ? -220 : 0 }}
-          transition={{ duration: 2, ease }}
+          animate={{ y: phase === 2 ? -160 : 0 }}
+          transition={{ duration: 1.4, ease }}
         >
           {/* Brand & Greeting */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, ease }}
-            onAnimationComplete={() => setTimeout(() => setPhase(2), 500)}
+            onAnimationComplete={() => setTimeout(() => setPhase(2), 200)}
           >
             <Link href="/" className="flex items-center gap-2 mb-6 group">
               <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center text-white shadow-xl shadow-accent/20 group-hover:scale-105 group-hover:shadow-accent/30 transition-all duration-300">
