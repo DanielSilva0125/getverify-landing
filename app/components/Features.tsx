@@ -59,7 +59,7 @@ function FeatureCard({
 
 export default function Features() {
   return (
-    <section className="px-6 pb-20 sm:pt-14 sm:pb-28 bg-[#F9FBFC]">
+    <section className="px-6 pt-10 sm:pt-14 pb-20 sm:pb-28 bg-[#F9FBFC]">
       <div className="mx-auto max-w-4xl text-center mb-8">
         <span className="inline-block rounded-full bg-accent/[0.08] px-3.5 py-1 text-[13px] font-semibold text-accent mb-4">
           Plataforma

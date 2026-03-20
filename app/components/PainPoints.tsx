@@ -23,7 +23,7 @@ const cards = [
 
 export default function PainPoints() {
   return (
-    <section className="px-6 pt-10 pb-20 sm:pt-4 sm:pb-14">
+    <section className="px-6 pt-10 pb-12 sm:pt-4 sm:pb-14">
       <div className="mx-auto max-w-4xl text-center mb-14">
         <span className="inline-block rounded-full bg-accent/[0.08] px-3.5 py-1 text-[13px] font-semibold text-accent mb-4">
           Verify
