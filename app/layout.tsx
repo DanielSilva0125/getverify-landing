@@ -33,7 +33,6 @@ export default function RootLayout({
         <ClerkProvider localization={esES}>
           <Providers>{children}</Providers>
         </ClerkProvider>
-
       </body>
     </html>
   );
