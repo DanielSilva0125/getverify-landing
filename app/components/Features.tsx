@@ -8,31 +8,45 @@ const topFeatures = [
     description:
       "Gestion estructurada de documentacion de empresas contratistas y trabajadores, con estados claros y trazabilidad.",
     mockup: (
-      <div className="relative w-full h-full flex items-center justify-center">
-        {/* Three overlapping document cards */}
-        {[
-          { rotate: "-6deg", x: "-12px", dot: "bg-red-400" },
-          { rotate: "0deg", x: "0px", dot: "bg-amber-400" },
-          { rotate: "5deg", x: "12px", dot: "bg-emerald-400" },
-        ].map((card, i) => (
-          <div
-            key={i}
-            className="absolute w-[72px] h-[90px] bg-white rounded-lg shadow-[0_2px_6px_rgba(0,0,0,0.06)] border border-dark-teal/10 p-2.5 flex flex-col gap-1.5"
-            style={{
-              transform: `rotate(${card.rotate}) translateX(${card.x})`,
-              zIndex: i,
-            }}
-          >
-            <div className="flex items-center justify-between">
-              <FileText className="w-3 h-3 text-accent/50" />
-              <div className={`w-1.5 h-1.5 rounded-full ${card.dot}`} />
+      <div className="w-full h-full flex gap-2 p-3">
+        {/* Sidebar — folder tree */}
+        <div className="w-[68px] shrink-0 bg-white rounded-lg border border-dark-teal/15 p-2 flex flex-col gap-2">
+          {[
+            { active: true, w: "w-9" },
+            { active: false, w: "w-7" },
+            { active: false, w: "w-8" },
+            { active: false, w: "w-6" },
+          ].map((item, i) => (
+            <div key={i} className="flex items-center gap-1.5">
+              <div className={`w-2 h-2 rounded ${item.active ? "bg-accent/50" : "bg-dark-teal/10"}`} />
+              <div className={`h-1 rounded-full ${item.active ? "bg-dark-teal/20" : "bg-dark-teal/10"} ${item.w}`} />
             </div>
-            <div className="h-1 rounded-full bg-dark-teal/12 w-full" />
-            <div className="h-1 rounded-full bg-dark-teal/12 w-4/5" />
-            <div className="h-1 rounded-full bg-dark-teal/12 w-3/5" />
-            <div className="h-1 rounded-full bg-dark-teal/12 w-full mt-auto" />
+          ))}
+        </div>
+        {/* Document list */}
+        <div className="flex-1 min-w-0 bg-white rounded-lg border border-dark-teal/15 flex flex-col">
+          {/* Search bar */}
+          <div className="px-2 py-1.5 border-b border-dark-teal/[0.06]">
+            <div className="h-3.5 rounded bg-dark-teal/[0.04] flex items-center px-1.5">
+              <div className="w-1.5 h-1.5 rounded-full border border-dark-teal/15" />
+            </div>
           </div>
-        ))}
+          {/* Rows */}
+          <div className="p-1.5 flex flex-col gap-1">
+            {[
+              { dot: "bg-emerald-400", w: "w-16" },
+              { dot: "bg-emerald-400", w: "w-12" },
+              { dot: "bg-amber-400", w: "w-14" },
+              { dot: "bg-red-400", w: "w-10" },
+            ].map((row, i) => (
+              <div key={i} className="flex items-center gap-1.5 px-1 py-0.5">
+                <FileText className="w-2.5 h-2.5 text-accent/50 shrink-0" />
+                <div className={`h-1 rounded-full bg-dark-teal/12 ${row.w}`} />
+                <div className={`w-1.5 h-1.5 rounded-full ${row.dot} shrink-0 ml-auto`} />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     ),
   },
@@ -41,31 +55,45 @@ const topFeatures = [
     description:
       "Notificaciones proactivas que evitan incumplimientos antes de que se conviertan en un riesgo.",
     mockup: (
-      <div className="relative w-full h-full flex items-center justify-center">
-        <div className="flex items-start gap-4">
-          {/* Bell with badge */}
-          <div className="relative mt-1">
-            <Bell className="w-7 h-7 text-accent/40" />
-            <div className="absolute -top-1 -right-1 w-3.5 h-3.5 bg-red-400 rounded-full flex items-center justify-center">
-              <span className="text-[7px] font-bold text-white">3</span>
-            </div>
+      <div className="w-full h-full flex gap-2 p-3">
+        {/* Mini calendar */}
+        <div className="w-[80px] shrink-0 bg-white rounded-lg border border-dark-teal/15 p-2 flex flex-col gap-1.5">
+          <div className="flex items-center justify-between">
+            <div className="h-1 rounded-full bg-dark-teal/15 w-8" />
+            <Bell className="w-2.5 h-2.5 text-accent/40" />
           </div>
-          {/* Notification toasts */}
-          <div className="flex flex-col gap-1.5">
-            {[
-              { border: "border-l-red-400", label: "w-16" },
-              { border: "border-l-amber-400", label: "w-12" },
-              { border: "border-l-dark-teal/15", label: "w-14" },
-            ].map((toast, i) => (
+          <div className="grid grid-cols-7 gap-[3px]">
+            {"LMMJVSD".split("").map((d, i) => (
+              <div key={`h${i}`} className="w-[7px] h-[7px] flex items-center justify-center text-[4px] text-dark-teal/25 font-medium">{d}</div>
+            ))}
+            {Array.from({ length: 28 }, (_, i) => (
               <div
                 key={i}
-                className={`bg-white rounded-md shadow-[0_1px_3px_rgba(0,0,0,0.05)] border border-dark-teal/10 border-l-2 ${toast.border} px-2.5 py-2 flex flex-col gap-1`}
-              >
-                <div className={`h-1 rounded-full bg-dark-teal/15 ${toast.label}`} />
-                <div className="h-1 rounded-full bg-dark-teal/10 w-20" />
-              </div>
+                className={`w-[7px] h-[7px] rounded-[2px] ${
+                  i === 12 ? "bg-red-400/40" : i === 19 ? "bg-amber-400/40" : i === 5 ? "bg-accent/30" : "bg-dark-teal/[0.04]"
+                }`}
+              />
             ))}
           </div>
+        </div>
+        {/* Alert list */}
+        <div className="flex-1 min-w-0 flex flex-col gap-1.5">
+          {[
+            { border: "border-l-red-400", badge: "bg-red-100 text-red-500", badgeText: "Vencido" },
+            { border: "border-l-amber-400", badge: "bg-amber-100 text-amber-500", badgeText: "3 días" },
+            { border: "border-l-emerald-400", badge: "bg-emerald-100 text-emerald-500", badgeText: "OK" },
+          ].map((alert, i) => (
+            <div
+              key={i}
+              className={`bg-white rounded-md border border-dark-teal/15 border-l-2 ${alert.border} px-2 py-1.5 flex flex-col gap-1`}
+            >
+              <div className="flex items-center gap-1.5">
+                <div className={`h-1 rounded-full bg-dark-teal/15 ${["w-16", "w-14", "w-12"][i]}`} />
+                <span className={`ml-auto text-[6px] font-semibold px-1.5 py-0.5 rounded-full ${alert.badge}`}>{alert.badgeText}</span>
+              </div>
+              <div className="h-1 rounded-full bg-dark-teal/10 w-full" />
+            </div>
+          ))}
         </div>
       </div>
     ),
@@ -78,44 +106,29 @@ const bottomFeatures = [
     description:
       "Dashboards que muestran el cumplimiento por proveedor y detectan brechas criticas.",
     mockup: (
-      <div className="relative w-full h-full flex items-end justify-center gap-5 pb-3 px-4">
-        {/* Mini bar chart */}
-        <div className="flex items-end gap-1">
+      <div className="w-full h-full flex flex-col gap-1.5 p-3">
+        {/* KPI row */}
+        <div className="flex gap-1.5">
           {[
-            { h: "h-8", color: "bg-accent/35" },
-            { h: "h-14", color: "bg-light-teal/60" },
-            { h: "h-10", color: "bg-accent/35" },
-            { h: "h-16", color: "bg-light-teal/60" },
-            { h: "h-6", color: "bg-accent/35" },
-          ].map((bar, i) => (
-            <div
-              key={i}
-              className={`w-3.5 ${bar.h} ${bar.color} rounded-t-sm`}
-            />
+            { value: "94%", color: "text-emerald-500", w: "w-8" },
+            { value: "12", color: "text-amber-500", w: "w-6" },
+            { value: "3", color: "text-red-500", w: "w-7" },
+          ].map((kpi, i) => (
+            <div key={i} className="flex-1 bg-white rounded-md border border-dark-teal/15 px-2 py-1.5">
+              <div className={`text-[10px] font-bold ${kpi.color}`}>{kpi.value}</div>
+              <div className={`h-0.5 rounded-full bg-dark-teal/10 ${kpi.w} mt-0.5`} />
+            </div>
           ))}
         </div>
-        {/* Donut gauge */}
-        <div className="relative w-14 h-14 flex items-center justify-center">
-          <svg className="w-14 h-14 -rotate-90" viewBox="0 0 36 36">
-            <circle
-              cx="18" cy="18" r="14"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="3"
-              className="text-dark-teal/5"
+        {/* Chart */}
+        <div className="flex-1 bg-white rounded-lg border border-dark-teal/15 flex items-end gap-[3px] px-2.5 pb-2 pt-1">
+          {[40, 65, 50, 80, 45, 70, 55, 85, 60, 75].map((h, i) => (
+            <div
+              key={i}
+              className={`flex-1 rounded-t-sm ${i % 2 === 0 ? "bg-accent/35" : "bg-light-teal/50"}`}
+              style={{ height: `${h}%` }}
             />
-            <circle
-              cx="18" cy="18" r="14"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="3"
-              strokeDasharray="88"
-              strokeDashoffset="26"
-              strokeLinecap="round"
-              className="text-accent/50"
-            />
-          </svg>
-          <span className="absolute text-[9px] font-semibold text-dark-teal/50">71%</span>
+          ))}
         </div>
       </div>
     ),
@@ -125,32 +138,33 @@ const bottomFeatures = [
     description:
       "Exportacion de informacion clave para auditorias, fiscalizaciones y decisiones.",
     mockup: (
-      <div className="relative w-full h-full flex items-center justify-center px-4">
-        <div className="w-full max-w-[140px]">
-          {/* Table */}
-          <div className="bg-white rounded-lg shadow-[0_1px_3px_rgba(0,0,0,0.05)] border border-dark-teal/10 overflow-hidden">
-            {/* Header */}
-            <div className="bg-accent/15 px-2 py-1.5 flex gap-2">
-              <div className="h-1 rounded-full bg-accent/40 w-8" />
-              <div className="h-1 rounded-full bg-accent/40 w-6" />
-              <div className="h-1 rounded-full bg-accent/40 w-5" />
+      <div className="w-full h-full flex flex-col p-3">
+        {/* Report header */}
+        <div className="flex items-center justify-between mb-1.5">
+          <div className="flex items-center gap-1.5">
+            <div className="w-4 h-4 rounded bg-accent/20 flex items-center justify-center">
+              <FileText className="w-2.5 h-2.5 text-accent/50" />
             </div>
-            {/* Rows */}
-            {[0, 1, 2].map((row) => (
-              <div
-                key={row}
-                className="px-2 py-1.5 flex gap-2 border-t border-dark-teal/[0.04]"
-              >
-                <div className="h-1 rounded-full bg-dark-teal/12 w-8" />
-                <div className="h-1 rounded-full bg-dark-teal/10 w-5" />
-                <div className="h-1 rounded-full bg-dark-teal/10 w-6" />
-              </div>
+            <div className="h-1.5 rounded-full bg-dark-teal/15 w-14" />
+          </div>
+          <Download className="w-3 h-3 text-accent/40" />
+        </div>
+        {/* Table */}
+        <div className="flex-1 bg-white rounded-lg border border-dark-teal/15 overflow-hidden flex flex-col">
+          {/* Header */}
+          <div className="bg-accent/15 px-2 py-1 flex gap-3">
+            {["w-8", "w-6", "w-5", "w-4"].map((w, i) => (
+              <div key={i} className={`h-1 rounded-full bg-accent/40 ${w}`} />
             ))}
           </div>
-          {/* Download icon */}
-          <div className="absolute top-2.5 right-3">
-            <Download className="w-3 h-3 text-accent/40" />
-          </div>
+          {/* Rows */}
+          {[0, 1, 2].map((row) => (
+            <div key={row} className="px-2 py-1 flex gap-3 border-t border-dark-teal/[0.04]">
+              {["w-7", "w-5", "w-6", "w-4"].map((w, j) => (
+                <div key={j} className={`h-1 rounded-full ${j === 0 ? "bg-dark-teal/12" : "bg-dark-teal/10"} ${w}`} />
+              ))}
+            </div>
+          ))}
         </div>
       </div>
     ),
@@ -160,31 +174,33 @@ const bottomFeatures = [
     description:
       "Segmenta la documentacion requerida por proyecto u operacion, adaptando requisitos segun contexto.",
     mockup: (
-      <div className="relative w-full h-full flex flex-col items-center justify-center px-4">
-        {/* Folder tabs */}
-        <div className="flex gap-0.5 self-start ml-2">
-          {["bg-accent/25 text-accent/70", "bg-dark-teal/5 text-dark-teal/25", "bg-dark-teal/5 text-dark-teal/25"].map(
-            (cls, i) => (
-              <div
-                key={i}
-                className={`px-2 py-0.5 rounded-t-md text-[7px] font-medium ${cls}`}
-              >
-                {["Proy A", "Proy B", "Proy C"][i]}
-              </div>
-            )
-          )}
+      <div className="w-full h-full flex flex-col gap-1.5 p-3">
+        {/* Tabs */}
+        <div className="flex gap-1">
+          {["Proy A", "Proy B", "Proy C"].map((name, i) => (
+            <div
+              key={i}
+              className={`px-2 py-0.5 rounded-md text-[7px] font-medium ${
+                i === 0 ? "bg-accent/25 text-accent/70" : "bg-dark-teal/5 text-dark-teal/25"
+              }`}
+            >
+              {name}
+            </div>
+          ))}
         </div>
-        {/* Panel with progress bars */}
-        <div className="w-full bg-white rounded-b-lg rounded-tr-lg shadow-[0_1px_3px_rgba(0,0,0,0.05)] border border-dark-teal/10 p-2.5 flex flex-col gap-2">
+        {/* Project detail panel */}
+        <div className="flex-1 bg-white rounded-lg border border-dark-teal/15 p-2 flex flex-col justify-center gap-2">
           {[
-            { fill: "w-4/5", color: "bg-accent/40" },
-            { fill: "w-3/5", color: "bg-light-teal/50" },
-            { fill: "w-[90%]", color: "bg-accent/40" },
+            { label: "w-10", fill: "w-[85%]", color: "bg-accent/40", pct: "85%" },
+            { label: "w-8", fill: "w-[60%]", color: "bg-light-teal/50", pct: "60%" },
+            { label: "w-12", fill: "w-[95%]", color: "bg-accent/40", pct: "95%" },
           ].map((bar, i) => (
-            <div key={i} className="w-full h-1.5 rounded-full bg-dark-teal/5">
-              <div
-                className={`h-full rounded-full ${bar.color} ${bar.fill}`}
-              />
+            <div key={i} className="flex items-center gap-2">
+              <div className={`h-1 rounded-full bg-dark-teal/12 ${bar.label} shrink-0`} />
+              <div className="flex-1 h-1.5 rounded-full bg-dark-teal/5">
+                <div className={`h-full rounded-full ${bar.color} ${bar.fill}`} />
+              </div>
+              <span className="text-[6px] font-semibold text-dark-teal/40 shrink-0">{bar.pct}</span>
             </div>
           ))}
         </div>
