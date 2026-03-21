@@ -9,5 +9,6 @@
 - [ ] RRSS links setup and footer details
 - [x] Vercel deploy
 - [x] Clerk login page design polishing
+- [x] Add animations, vercel analytics, seo and good stuff
 
-- [ ] Add animations, vercel analytics, seo and good stuff
+- [ ] SEO and real links with google my business and stuff; better marketing
