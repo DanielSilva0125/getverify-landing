@@ -2,6 +2,7 @@ import HeroSection from "./components/HeroSection";
 import PainPoints from "./components/PainPoints";
 import Features from "./components/Features";
 import MarketSegments from "./components/MarketSegments";
+import WaitlistSection from "./components/WaitlistSection";
 import CallToAction from "./components/CallToAction";
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
       <PainPoints />
       <Features />
       <MarketSegments />
+      <WaitlistSection />
       <CallToAction />
     </div>
   );
