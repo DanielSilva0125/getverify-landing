@@ -6,7 +6,7 @@ import ScrollReveal from "./ScrollReveal";
 
 export default function CallToAction() {
   return (
-    <section className="bg-white px-6 sm:px-8 lg:px-10 pt-10 sm:pt-12 lg:pt-10 pb-10 sm:pb-12 lg:pb-14 relative overflow-hidden flex flex-col items-center">
+    <section aria-label="Llamado a la acción" className="bg-white px-6 sm:px-8 lg:px-10 pt-10 sm:pt-12 lg:pt-10 pb-10 sm:pb-12 lg:pb-14 relative overflow-hidden flex flex-col items-center">
       {/* Subtle geometric background pattern */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.03]"
