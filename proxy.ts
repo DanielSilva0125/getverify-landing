@@ -20,21 +20,11 @@ export default clerkMiddleware(async (auth, req) => {
                 return NextResponse.redirect(new URL('/dashboard', req.url));
             }
 
-            // Redirect /sign-in to marketing domain — only for full page navigations
-            // (RSC fetches and POST requests must stay same-origin to avoid CORS)
-            const isRSC = req.headers.get('RSC') === '1';
-            if (pathname.startsWith('/sign-in') && req.method === 'GET' && !isRSC) {
-                const marketingHost = host.replace(/^app\./, '');
-                return NextResponse.redirect(`${protocol}//${marketingHost}${pathname}${search}`);
-            }
-
-            // Protect dashboard routes with manual auth check (not auth.protect())
-            // to avoid cross-origin redirects on RSC fetches
+            // Protect dashboard routes — always redirect to same-origin /sign-in
+            // (never cross-origin, which would break RSC fetches with CORS errors)
             if (isProtectedRoute(req)) {
                 const { userId } = await auth();
                 if (!userId) {
-                    // Same-origin redirect to /sign-in — avoids CORS issues
-                    // Full page navigations will then be redirected to the marketing domain above
                     const signInUrl = new URL('/sign-in', req.url);
                     signInUrl.searchParams.set('redirect_url', req.url);
                     return NextResponse.redirect(signInUrl);
