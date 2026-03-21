@@ -5,10 +5,10 @@
 - [ ] Implementar dashboard ui mockup para hero section
 - [x] Implementar UI mockup components para section "Plataforma"
 
-- [ ] Waiting list setup
-- [ ] RRSS links setup and footer details
+- [ ] favicon, SEO, RRSS links setup and footer details
+- [x] Waiting list setup
 - [x] Vercel deploy
 - [x] Clerk login page design polishing
 - [x] Add animations, vercel analytics, seo and good stuff
 
-- [ ] SEO and real links with google my business and stuff; better marketing
+- [ ] google my business and stuff; better marketing
