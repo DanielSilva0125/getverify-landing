@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { 
   LayoutDashboard, Users, FileText, Bell, 
-  BarChart3, Settings, HelpCircle, X, Box
+  BarChart3, Settings, HelpCircle, X, Shield, Copy, PanelLeft, Box
 } from "lucide-react";
 
 interface SidebarProps {
@@ -14,15 +14,15 @@ interface SidebarProps {
 
 const mainNav = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
-  { href: "/dashboard/contractors", label: "Contratistas", icon: Users },
-  { href: "/dashboard/documents", label: "Documentos", icon: FileText },
-  { href: "/dashboard/alerts", label: "Alertas", icon: Bell },
-  { href: "/dashboard/reports", label: "Reportes", icon: BarChart3 },
+  { href: "/contractors", label: "Contratistas", icon: Users },
+  { href: "/documents", label: "Documentos", icon: FileText },
+  { href: "/alerts", label: "Alertas", icon: Bell },
+  { href: "/reports", label: "Reportes", icon: BarChart3 },
 ];
 
 const bottomNav = [
-  { href: "/dashboard/settings", label: "Settings", icon: Settings },
-  { href: "/dashboard/help", label: "Help & Support", icon: HelpCircle },
+  { href: "/settings", label: "Settings", icon: Settings, disabled: false },
+  { href: "#", label: "Help & Support", icon: HelpCircle, disabled: true },
 ];
 
 export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
@@ -31,30 +31,35 @@ export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
   return (
     <>
       {/* Mobile Backdrop */}
-      <div 
+      <div
         className={`fixed inset-0 bg-black/20 z-40 transition-opacity lg:hidden ${isOpen ? 'opacity-100 block' : 'opacity-0 hidden'}`}
         onClick={() => setIsOpen(false)}
       />
 
-      {/* Sidebar Container */}
-      <aside className={`fixed lg:sticky top-0 left-0 h-screen bg-white z-50 w-[260px] border-r border-gray-100 flex flex-col transition-transform duration-300 ease-in-out lg:translate-x-0 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
-        
-        {/* Header / Logo */}
-        <div className="flex items-center justify-between px-6 py-6 h-[72px] shrink-0">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-xl bg-blue-600 flex items-center justify-center text-white">
-              <Box className="w-5 h-5 fill-current" />
+      {/* Sidebar */}
+      <aside className={`fixed lg:sticky top-0 left-0 h-screen bg-white z-50 w-[250px] border-r border-[#eef0f3] flex flex-col transition-transform duration-300 ease-in-out lg:translate-x-0 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+
+        {/* Logo */}
+        <div className="flex items-center justify-between px-6 h-[72px] shrink-0 border-b border-[#eef0f3]">
+          <div className="flex items-center gap-2.5">
+            <div className="w-[28px] h-[28px] rounded-[8px] bg-[#3B6BF5] flex items-center justify-center text-white">
+              <Shield className="w-4 h-4" strokeWidth={2.5} />
             </div>
-            <span className="text-[19px] font-bold tracking-tight text-gray-900">Verify</span>
+            <span className="text-[17px] font-bold tracking-[-0.01em] text-[#1a1a2e]">Verify</span>
           </div>
-          <button onClick={() => setIsOpen(false)} className="lg:hidden p-1 -mr-2 text-gray-400 hover:text-gray-900 transition-colors">
-            <X className="w-5 h-5" />
-          </button>
+          <div className="flex items-center">
+            <button className="hidden lg:flex w-7 h-7 items-center justify-center text-gray-400 hover:bg-gray-50 rounded-lg transition-colors">
+              <PanelLeft className="w-[18px] h-[18px]" strokeWidth={1.5} />
+            </button>
+            <button onClick={() => setIsOpen(false)} className="lg:hidden p-1 text-gray-400 hover:text-gray-900 transition-colors">
+              <X className="w-5 h-5" />
+            </button>
+          </div>
         </div>
 
         {/* Main Navigation */}
-        <nav className="flex-1 px-4 py-4">
-          <div className="space-y-0.5">
+        <nav className="flex-1 px-4 pt-5 pb-2">
+          <div className="space-y-[4px]">
             {mainNav.map((item) => {
               const isActive = pathname === item.href;
               return (
@@ -62,16 +67,22 @@ export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className={`relative flex items-center gap-3 px-3 py-2.5 rounded-lg font-medium text-[13px] transition-colors group ${
-                    isActive 
-                      ? "bg-blue-50/70 text-blue-600" 
-                      : "text-gray-500 hover:text-gray-900 hover:bg-gray-50/80"
+                  className={`relative flex items-center gap-3 px-3.5 py-[10px] rounded-[10px] text-[14px] transition-all duration-150 ${
+                    isActive
+                      ? "bg-[#EEF4FF] text-[#3B6BF5] font-semibold"
+                      : "text-[#64748b] hover:text-[#1e293b] hover:bg-[#f8f8fa] font-medium"
                   }`}
                 >
                   {isActive && (
-                    <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-5 bg-blue-600 rounded-r-full" />
+                    <div className="absolute -left-4 top-1/2 -translate-y-1/2 w-[3px] h-[40px] bg-[#3B6BF5] rounded-r-lg" />
                   )}
-                  <item.icon className={`w-[18px] h-[18px] ${isActive ? "text-blue-600" : "text-gray-400 group-hover:text-gray-600"}`} strokeWidth={isActive ? 2.5 : 2} />
+                  {isActive ? (
+                    <div className="w-[22px] h-[22px] rounded-full bg-[#3B6BF5] flex items-center justify-center text-white shrink-0 shadow-sm shadow-blue-500/20">
+                      <item.icon className="w-3 h-3" strokeWidth={2.5} />
+                    </div>
+                  ) : (
+                    <item.icon className="w-[20px] h-[20px] text-[#94a3b8] shrink-0" strokeWidth={1.8} />
+                  )}
                   {item.label}
                 </Link>
               );
@@ -89,11 +100,10 @@ export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className={`relative flex items-center gap-3 px-3 py-2.5 rounded-lg font-medium text-[13px] transition-colors group ${
-                    isActive 
-                      ? "bg-blue-50/70 text-blue-600" 
+                  className={`relative flex items-center gap-3 px-3 py-2.5 rounded-lg font-medium text-[13px] transition-colors group ${isActive
+                      ? "bg-blue-50/70 text-blue-600"
                       : "text-gray-500 hover:text-gray-900 hover:bg-gray-50/80"
-                  }`}
+                    }`}
                 >
                   <item.icon className={`w-[18px] h-[18px] ${isActive ? "text-blue-600" : "text-gray-400 group-hover:text-gray-600"}`} strokeWidth={isActive ? 2.5 : 2} />
                   {item.label}
@@ -106,7 +116,7 @@ export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
           <div className="bg-gradient-to-br from-[#1b2f4f] to-[#0a1529] rounded-2xl p-5 text-white relative overflow-hidden group hover:shadow-lg transition-all">
             <div className="absolute -top-10 -right-10 w-24 h-24 bg-blue-500/20 blur-2xl rounded-full" />
             <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-blue-400/20 to-transparent rounded-bl-full" />
-            
+
             <div className="relative">
               <div className="w-7 h-7 bg-blue-500/20 rounded-lg flex items-center justify-center mb-3">
                 <Box className="w-4 h-4 text-blue-400" />
