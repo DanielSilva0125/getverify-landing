@@ -20,8 +20,8 @@ export default function Navbar() {
         <div className="flex items-center">
           <SignInButton
             mode="redirect"
-            fallbackRedirectUrl="/dashboard"
-            forceRedirectUrl="/dashboard"
+            fallbackRedirectUrl={process.env.NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL || "/dashboard"}
+            forceRedirectUrl={process.env.NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL || "/dashboard"}
           >
             <Button
               as="a"

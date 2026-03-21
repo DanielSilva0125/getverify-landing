@@ -32,7 +32,13 @@ export default function RootLayout({
   return (
     <html lang="es" className={figtree.className}>
       <body className={`${geistMono.variable} antialiased`}>
-        <ClerkProvider localization={esES}>
+        <ClerkProvider
+          localization={esES}
+          allowedRedirectOrigins={[
+            "http://app.getverify.local:3000",
+            "https://app.getverify.cl",
+          ]}
+        >
           <Providers>{children}</Providers>
         </ClerkProvider>
         <Analytics />
