@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const ease: [number, number, number, number] = [0.22, 1, 0.36, 1];
+const marketingHome = process.env.NEXT_PUBLIC_MARKETING_URL || "/";
 
 export default function Page() {
   const [phase, setPhase] = useState<1 | 2>(1);
@@ -35,7 +36,7 @@ export default function Page() {
         transition={{ duration: 0.5, delay: 0.2, ease }}
       >
         <Link
-          href="/"
+          href={marketingHome}
           className="group inline-flex items-center gap-2 text-[14px] font-medium text-dark-teal/60 hover:text-dark-teal transition-colors"
         >
           <ArrowLeft className="w-4 h-4 transition-transform group-hover:-translate-x-0.5" strokeWidth={2} />
@@ -60,7 +61,7 @@ export default function Page() {
             transition={{ duration: 0.6, ease }}
             onAnimationComplete={() => setTimeout(() => setPhase(2), 200)}
           >
-            <Link href="/" className="flex items-center gap-2 mb-6 group">
+            <Link href={marketingHome} className="flex items-center gap-2 mb-6 group">
               <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center text-white shadow-xl shadow-accent/20 group-hover:scale-105 group-hover:shadow-accent/30 transition-all duration-300">
                 <span className="font-bold text-[20px]">V</span>
               </div>

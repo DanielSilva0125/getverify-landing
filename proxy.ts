@@ -15,8 +15,11 @@ export default clerkMiddleware(async (auth, req) => {
     // In production: hostname-based routing between domains
     if (!isDev) {
         if (isAppSubdomain) {
-            if (pathname === '/') {
-                return NextResponse.redirect(new URL('/dashboard', req.url));
+            // Redirect sign-in and root to the marketing domain
+            if (pathname === '/' || pathname.startsWith('/sign-in')) {
+                const marketingHost = host.replace(/^app\./, '');
+                const target = pathname === '/' ? '/dashboard' : `${pathname}${search}`;
+                return NextResponse.redirect(`${protocol}//${marketingHost}${target}`);
             }
             if (isProtectedRoute(req)) {
                 await auth.protect();
