@@ -38,6 +38,7 @@ export default function RootLayout({
             "http://app.getverify.local:3000",
             "https://app.getverify.cl",
           ]}
+          afterSignOutUrl="https://www.getverify.cl"
         >
           <Providers>{children}</Providers>
         </ClerkProvider>
