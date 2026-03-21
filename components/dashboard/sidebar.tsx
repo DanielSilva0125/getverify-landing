@@ -21,7 +21,7 @@ const mainNav = [
 ];
 
 const bottomNav = [
-  { href: "/settings", label: "Settings", icon: Settings, disabled: false },
+  { href: "/settings", label: "Settings", icon: Settings },
   { href: "#", label: "Help & Support", icon: HelpCircle, disabled: true },
 ];
 
@@ -76,13 +76,10 @@ export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
                   {isActive && (
                     <div className="absolute -left-4 top-1/2 -translate-y-1/2 w-[3px] h-[40px] bg-[#3B6BF5] rounded-r-lg" />
                   )}
-                  {isActive ? (
-                    <div className="w-[22px] h-[22px] rounded-full bg-[#3B6BF5] flex items-center justify-center text-white shrink-0 shadow-sm shadow-blue-500/20">
-                      <item.icon className="w-3 h-3" strokeWidth={2.5} />
-                    </div>
-                  ) : (
-                    <item.icon className="w-[20px] h-[20px] text-[#94a3b8] shrink-0" strokeWidth={1.8} />
-                  )}
+                  <item.icon
+                    className={`w-5 h-5 shrink-0 ${isActive ? "text-accent" : "text-[#94a3b8]"}`}
+                    strokeWidth={1.8}
+                  />
                   {item.label}
                 </Link>
               );
@@ -94,6 +91,21 @@ export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
         <div className="px-4 pb-6 pt-2 shrink-0">
           <div className="space-y-0.5 mb-6">
             {bottomNav.map((item) => {
+              if ("disabled" in item && item.disabled) {
+                return (
+                  <span
+                    key={item.label}
+                    aria-disabled="true"
+                    className="relative flex items-center gap-3 px-3 py-2.5 rounded-lg font-medium text-[13px] text-gray-400/90 cursor-not-allowed select-none"
+                  >
+                    <item.icon
+                      className="w-[18px] h-[18px] shrink-0 text-gray-300"
+                      strokeWidth={2}
+                    />
+                    {item.label}
+                  </span>
+                );
+              }
               const isActive = pathname === item.href;
               return (
                 <Link
@@ -105,7 +117,10 @@ export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
                       : "text-gray-500 hover:text-gray-900 hover:bg-gray-50/80"
                     }`}
                 >
-                  <item.icon className={`w-[18px] h-[18px] ${isActive ? "text-blue-600" : "text-gray-400 group-hover:text-gray-600"}`} strokeWidth={isActive ? 2.5 : 2} />
+                  <item.icon
+                    className={`w-[18px] h-[18px] ${isActive ? "text-accent" : "text-gray-400 group-hover:text-gray-600"}`}
+                    strokeWidth={2}
+                  />
                   {item.label}
                 </Link>
               );
