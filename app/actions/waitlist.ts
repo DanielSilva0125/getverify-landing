@@ -72,7 +72,7 @@ async function sendConfirmationEmail(email: string) {
     html: `
       <div style="font-family: 'Figtree', -apple-system, sans-serif; max-width: 480px; margin: 0 auto; padding: 40px 24px;">
         <div style="text-align: center; margin-bottom: 32px;">
-          <div style="display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; background: #6581EA; border-radius: 8px; color: white; font-weight: 700; font-size: 18px;">V</div>
+          <div style="display: inline-block; width: 44px; height: 44px; background: #6581EA; border-radius: 12px; color: white; font-weight: 500; font-size: 26px; line-height: 44px; text-align: center;">V</div>
         </div>
         <h1 style="font-size: 24px; color: #15292F; text-align: center; margin-bottom: 16px;">
           ¡Bienvenido a la lista de espera!
