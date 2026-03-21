@@ -1,10 +1,8 @@
-import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import PainPoints from "./components/PainPoints";
 import Features from "./components/Features";
 import MarketSegments from "./components/MarketSegments";
 import CallToAction from "./components/CallToAction";
-import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -18,16 +16,12 @@ export default function Home() {
         }}
       />
 
-      <Navbar />
-
       <HeroSection />
 
       <PainPoints />
       <Features />
       <MarketSegments />
       <CallToAction />
-
-      <Footer />
     </div>
   );
 }
