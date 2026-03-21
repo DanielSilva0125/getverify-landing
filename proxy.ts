@@ -15,14 +15,30 @@ export default clerkMiddleware(async (auth, req) => {
     // In production: hostname-based routing between domains
     if (!isDev) {
         if (isAppSubdomain) {
-            // Redirect sign-in and root to the marketing domain
-            if (pathname === '/' || pathname.startsWith('/sign-in')) {
-                const marketingHost = host.replace(/^app\./, '');
-                const target = pathname === '/' ? '/dashboard' : `${pathname}${search}`;
-                return NextResponse.redirect(`${protocol}//${marketingHost}${target}`);
+            // Redirect root to /dashboard (same origin)
+            if (pathname === '/') {
+                return NextResponse.redirect(new URL('/dashboard', req.url));
             }
+
+            // Redirect /sign-in to marketing domain — only for full page navigations
+            // (RSC fetches and POST requests must stay same-origin to avoid CORS)
+            const isRSC = req.headers.get('RSC') === '1';
+            if (pathname.startsWith('/sign-in') && req.method === 'GET' && !isRSC) {
+                const marketingHost = host.replace(/^app\./, '');
+                return NextResponse.redirect(`${protocol}//${marketingHost}${pathname}${search}`);
+            }
+
+            // Protect dashboard routes with manual auth check (not auth.protect())
+            // to avoid cross-origin redirects on RSC fetches
             if (isProtectedRoute(req)) {
-                await auth.protect();
+                const { userId } = await auth();
+                if (!userId) {
+                    // Same-origin redirect to /sign-in — avoids CORS issues
+                    // Full page navigations will then be redirected to the marketing domain above
+                    const signInUrl = new URL('/sign-in', req.url);
+                    signInUrl.searchParams.set('redirect_url', req.url);
+                    return NextResponse.redirect(signInUrl);
+                }
             }
         } else {
             // Marketing domain: redirect /dashboard to app subdomain
