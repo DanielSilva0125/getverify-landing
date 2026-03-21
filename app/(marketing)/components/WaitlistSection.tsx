@@ -102,7 +102,7 @@ export default function WaitlistSection() {
                   <Button
                     type="submit"
                     isLoading={isPending}
-                    className="btn-glow bg-accent hover:bg-[#5570e0] text-white font-medium px-6 h-12 text-[14px] tracking-[-0.01em] rounded-xl shrink-0 w-full sm:w-auto"
+                    className="btn-glow bg-accent hover:bg-[#5570e0] text-white font-medium pl-5 pr-3.5 h-11 text-[14px] tracking-[-0.01em] rounded-2xl shrink-0 w-full sm:w-auto"
                   >
                     {!isPending && (
                       <>
