@@ -41,7 +41,7 @@ export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
       <aside className={`fixed lg:sticky top-0 left-0 h-screen bg-white z-50 w-[250px] border-r border-[#eef0f3] flex flex-col transition-transform duration-300 ease-in-out lg:translate-x-0 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
 
         {/* Logo */}
-        <div className="flex items-center justify-between px-6 h-[72px] shrink-0">
+        <div className="flex items-center justify-between px-6 h-[72px] shrink-0 border-b border-[#eef0f3]">
           <div className="flex items-center gap-2.5">
             <Image
               src="/brand/logo-icon.png"

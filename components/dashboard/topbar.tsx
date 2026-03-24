@@ -51,11 +51,11 @@ export default function Topbar({ onMenuClick }: TopbarProps) {
             <span className="size-[7px] rounded-full bg-[#d64555]" />
           </span>
         </button>
-        <div className="pl-1">
+        <div className="[&_.cl-userButtonTrigger]:!h-[42px] [&_.cl-userButtonTrigger]:!w-[42px] [&_.cl-userButtonAvatarBox]:!h-[42px] [&_.cl-userButtonAvatarBox]:!w-[42px]">
           <UserButton
             appearance={{
               elements: {
-                userButtonAvatarBox: "w-[50px] h-[50px] border-1 border-[#eef0f3]",
+                userButtonAvatarBox: "border border-[#eef0f3]",
               },
             }}
           />
