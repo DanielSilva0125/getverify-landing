@@ -29,7 +29,11 @@ const segments = [
 
 export default function MarketSegments() {
   return (
-    <section aria-label="Segmentos de mercado de Verify" className="bg-[#F7F7F7] px-6 py-20 sm:py-16 relative overflow-hidden">
+    <section
+      id="segmentos"
+      aria-label="Segmentos de mercado de Verify"
+      className="bg-[#F7F7F7] px-6 py-20 sm:py-16 relative overflow-hidden"
+    >
       {/* Subtle radial glow to tie in with the hero section */}
       <div
         className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-[800px] h-[400px]"

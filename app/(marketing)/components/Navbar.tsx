@@ -1,20 +1,24 @@
 "use client";
+import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@heroui/button";
 import { SignInButton } from "@clerk/nextjs";
 
 export default function Navbar() {
   return (
-    <header className="w-full border-b border-dark-teal/[0.06]">
-      <nav className="w-full px-6 lg:px-10 py-4 flex items-center justify-between max-w-[1200px] mx-auto">
-        {/* Left: Logo */}
-        <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-md bg-accent flex items-center justify-center text-white">
-            V
-          </div>
-          <span className="text-[17px] font-semibold tracking-[-0.01em] text-dark-teal">
-            Verify
-          </span>
-        </div>
+    <header className="w-full border-b border-dark-teal/[0.06] bg-white">
+      <nav className="mx-auto flex w-full max-w-[1200px] items-center justify-between px-6 py-4 lg:px-10">
+        <Link href="/" aria-label="Verify" className="flex shrink-0 items-center py-1">
+          <Image
+            src="/brand/logo-dark.png"
+            alt="Verify"
+            width={1124}
+            height={292}
+            priority
+            className="block h-auto w-[122px] sm:w-[110px]"
+            sizes="(min-width: 640px) 138px, 122px"
+          />
+        </Link>
 
         {/* Right: Actions */}
         <div className="flex items-center">
@@ -27,7 +31,7 @@ export default function Navbar() {
               as="a"
               href="#"
               variant="light"
-              className="inline-flex text-[13px] font-medium text-dark-teal/50 hover:text-dark-teal rounded-2xl"
+              className="inline-flex rounded-2xl px-0 text-[13px] font-medium text-dark-teal/50 hover:text-dark-teal"
             >
               Iniciar sesión
             </Button>
