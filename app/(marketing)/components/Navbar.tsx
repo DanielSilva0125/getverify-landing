@@ -31,7 +31,8 @@ export default function Navbar() {
               as="a"
               href="#"
               variant="light"
-              className="inline-flex rounded-2xl px-0 text-[13px] font-medium text-dark-teal/50 hover:text-dark-teal"
+              radius="lg"
+              className="inline-flex text-[13px] font-medium text-dark-teal/50 hover:text-dark-teal"
             >
               Iniciar sesión
             </Button>
