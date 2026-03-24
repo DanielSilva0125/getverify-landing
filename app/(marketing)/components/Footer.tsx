@@ -1,5 +1,8 @@
 import Link from "next/link";
-import { Twitter, Linkedin, Github } from "lucide-react";
+import { Instagram, Linkedin } from "lucide-react";
+
+const LINKEDIN_URL = "https://www.linkedin.com/company/verifycl/";
+const INSTAGRAM_URL = "https://www.instagram.com/verifychile";
 
 export default function Footer() {
   return (
@@ -35,15 +38,25 @@ export default function Footer() {
       <div className="max-w-[1200px] mx-auto pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
         <p className="text-[13px] text-white/50">© {new Date().getFullYear()} Verify. Todos los derechos reservados.</p>
         <div className="flex items-center gap-4 text-white/40">
-          <a href="#" className="hover:text-white transition-colors" aria-label="Twitter">
-            <Twitter className="w-[18px] h-[18px]" strokeWidth={2} />
-          </a>
-          <a href="#" className="hover:text-white transition-colors" aria-label="LinkedIn">
+           <a
+            href={LINKEDIN_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-white transition-colors"
+            aria-label="LinkedIn"
+          >
             <Linkedin className="w-[18px] h-[18px]" strokeWidth={2} />
           </a>
-          <a href="#" className="hover:text-white transition-colors" aria-label="GitHub">
-            <Github className="w-[18px] h-[18px]" strokeWidth={2} />
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noreferrer"
+            className="hover:text-white transition-colors"
+            aria-label="Instagram"
+          >
+            <Instagram className="w-[18px] h-[18px]" strokeWidth={2} />
           </a>
+
         </div>
       </div>
     </footer>
