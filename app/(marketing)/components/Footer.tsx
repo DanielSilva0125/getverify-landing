@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Instagram, Linkedin } from "lucide-react";
 
@@ -10,27 +11,28 @@ export default function Footer() {
       <div className="max-w-[1200px] mx-auto flex flex-col items-center text-center">
 
         {/* Brand / Logo Section */}
-        <div className="flex flex-col items-center mb-10">
-          <div className="flex items-center gap-2 mb-5">
-            <div className="w-7 h-7 rounded-md bg-accent flex items-center justify-center font-semibold text-white">
-              V
-            </div>
-            <span className="text-[17px] font-semibold tracking-[-0.01em] text-white">
-              Verify
-            </span>
-          </div>
+        <div className="mb-10 flex flex-col items-center">
+          <Link href="/" aria-label="Verify" className="mb-6 flex items-center justify-center py-1">
+            <Image
+              src="/brand/logo-white.png"
+              alt="Verify"
+              width={1124}
+              height={292}
+              className="block h-auto w-[132px] sm:w-[148px]"
+              sizes="(min-width: 640px) 148px, 132px"
+            />
+          </Link>
           <p className="text-[15px] leading-relaxed text-white/60 max-w-[400px]">
             Control documental simplificado para empresas que valoran la eficiencia y el cumplimiento normativo.
           </p>
         </div>
 
         {/* Horizontal Links */}
-        <ul className="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-14 text-[14px] text-white/70">
-          <li><Link href="#" className="hover:text-white transition-colors">Características</Link></li>
-          <li><Link href="#" className="hover:text-white transition-colors">Integraciones</Link></li>
-          <li><Link href="#" className="hover:text-white transition-colors">Precios</Link></li>
-          <li><Link href="#" className="hover:text-white transition-colors">Changelog</Link></li>
-          <li><Link href="#" className="hover:text-white transition-colors">Roadmap</Link></li>
+        <ul className="mb-14 flex flex-wrap justify-center gap-x-8 gap-y-4 text-[14px] text-white/70">
+          <li><Link href="#learn-more" className="hover:text-white transition-colors">Problema</Link></li>
+          <li><Link href="#plataforma" className="hover:text-white transition-colors">Plataforma</Link></li>
+          <li><Link href="#segmentos" className="hover:text-white transition-colors">Segmentos</Link></li>
+          <li><Link href="#waitlist" className="hover:text-white transition-colors">Acceso anticipado</Link></li>
         </ul>
       </div>
 
