@@ -54,25 +54,12 @@ export default function Page() {
           animate={{ y: phase === 2 ? -190 : 30 }}
           transition={{ duration: 1.4, ease }}
         >
-          {/* Brand & Greeting */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, ease }}
-            onAnimationComplete={() => setTimeout(() => setPhase(2), 200)}
-          >
-            <Link href={marketingHome} className="flex items-center gap-2 mb-6 group">
-              <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center text-white shadow-xl shadow-accent/20 group-hover:scale-105 group-hover:shadow-accent/30 transition-all duration-300">
-                <span className="font-bold text-[20px]">V</span>
-              </div>
-            </Link>
-          </motion.div>
-
           <motion.h1
             className="text-[28px] sm:text-[32px] font-semibold tracking-[-0.02em] text-dark-teal mb-2"
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15, ease }}
+            onAnimationComplete={() => setTimeout(() => setPhase(2), 200)}
           >
             Bienvenido a Verify
           </motion.h1>
