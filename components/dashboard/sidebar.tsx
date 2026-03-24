@@ -1,10 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { 
   LayoutDashboard, Users, FileText, Bell, 
-  BarChart3, Settings, HelpCircle, X, Shield, Copy, PanelLeft, Box
+  BarChart3, Settings, HelpCircle, X, Copy, PanelLeft, Box
 } from "lucide-react";
 
 interface SidebarProps {
@@ -13,7 +14,7 @@ interface SidebarProps {
 }
 
 const mainNav = [
-  { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
+  { href: "/dashboard", label: "Panel", icon: LayoutDashboard },
   { href: "/contractors", label: "Contratistas", icon: Users },
   { href: "/documents", label: "Documentos", icon: FileText },
   { href: "/alerts", label: "Alertas", icon: Bell },
@@ -21,8 +22,8 @@ const mainNav = [
 ];
 
 const bottomNav = [
-  { href: "/settings", label: "Settings", icon: Settings },
-  { href: "#", label: "Help & Support", icon: HelpCircle, disabled: true },
+  { href: "/settings", label: "Preferencias", icon: Settings },
+  { href: "#", label: "Soporte", icon: HelpCircle, disabled: true },
 ];
 
 export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
@@ -40,11 +41,15 @@ export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
       <aside className={`fixed lg:sticky top-0 left-0 h-screen bg-white z-50 w-[250px] border-r border-[#eef0f3] flex flex-col transition-transform duration-300 ease-in-out lg:translate-x-0 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
 
         {/* Logo */}
-        <div className="flex items-center justify-between px-6 h-[72px] shrink-0 border-b border-[#eef0f3]">
+        <div className="flex items-center justify-between px-6 h-[72px] shrink-0">
           <div className="flex items-center gap-2.5">
-            <div className="w-[28px] h-[28px] rounded-[8px] bg-[#3B6BF5] flex items-center justify-center text-white">
-              <Shield className="w-4 h-4" strokeWidth={2.5} />
-            </div>
+            <Image
+              src="/brand/logo-icon.png"
+              alt="Verify"
+              width={180}
+              height={180}
+              className="size-8 shrink-0 object-cover"
+            />
             <span className="text-[17px] font-bold tracking-[-0.01em] text-[#1a1a2e]">Verify</span>
           </div>
           <div className="flex items-center">
@@ -67,14 +72,14 @@ export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className={`relative flex items-center gap-3 px-3.5 py-[10px] rounded-[10px] text-[14px] transition-all duration-150 ${
+                  className={`relative flex items-center gap-3 px-3.5 py-[10px] rounded-xl text-[14px] transition-all duration-150 ${
                     isActive
                       ? "bg-[#EEF4FF] text-[#3B6BF5] font-semibold"
                       : "text-[#64748b] hover:text-[#1e293b] hover:bg-[#f8f8fa] font-medium"
                   }`}
                 >
                   {isActive && (
-                    <div className="absolute -left-4 top-1/2 -translate-y-1/2 w-[3px] h-[40px] bg-[#3B6BF5] rounded-r-lg" />
+                    <div className="absolute -left-2.5 top-1/2 -translate-y-1/2 w-[3px] h-[65%] bg-[#3B6BF5] rounded-full" />
                   )}
                   <item.icon
                     className={`w-5 h-5 shrink-0 ${isActive ? "text-accent" : "text-[#94a3b8]"}`}

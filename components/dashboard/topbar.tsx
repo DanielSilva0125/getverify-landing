@@ -8,7 +8,7 @@ interface TopbarProps {
 }
 
 const topbarBtnSurface =
-  "flex items-center justify-center border border-dark-teal/15 bg-light-gray text-dark-teal/80 hover:bg-accent/12 hover:border-accent/45 hover:text-accent transition-colors duration-200";
+  "flex items-center justify-center border border-[#eef0f3] bg-[#fbfcff] text-dark-teal/80 hover:bg-accent/12 hover:border-accent/45 hover:text-accent transition-colors duration-200";
 
 export default function Topbar({ onMenuClick }: TopbarProps) {
   return (
@@ -24,11 +24,11 @@ export default function Topbar({ onMenuClick }: TopbarProps) {
         </button>
 
         {/* Search */}
-        <div className="hidden md:flex items-center bg-light-gray rounded-[10px] px-3.5 py-[9px] border border-dark-teal/12 focus-within:border-accent focus-within:bg-white transition-colors w-[320px]">
+        <div className="hidden md:flex items-center bg-[#fafbfc] rounded-full px-3.5 py-[9px] border border-[#eef0f3] focus-within:border-accent focus-within:bg-white transition-colors w-[320px]">
           <Search className="w-[16px] h-[16px] text-dark-teal/40 mr-2.5 shrink-0" strokeWidth={2} />
           <input 
             type="text" 
-            placeholder="Search anything..." 
+            placeholder="Buscar" 
             className="bg-transparent border-none outline-none text-[13px] font-medium w-full placeholder:text-[#b0b7c3] text-gray-800"
           />
           <kbd className="hidden lg:inline-flex items-center gap-0.5 px-1.5 h-[22px] border border-dark-teal/15 rounded-[5px] text-[10px] font-semibold text-dark-teal/50 bg-white ml-2 shrink-0">
@@ -51,11 +51,11 @@ export default function Topbar({ onMenuClick }: TopbarProps) {
             <span className="size-[7px] rounded-full bg-[#d64555]" />
           </span>
         </button>
-        <div className="ml-1 pl-1">
+        <div className="pl-1">
           <UserButton
             appearance={{
               elements: {
-                userButtonAvatarBox: "w-[42px] h-[42px] border-2 border-dark-teal/15",
+                userButtonAvatarBox: "w-[50px] h-[50px] border-1 border-[#eef0f3]",
               },
             }}
           />
