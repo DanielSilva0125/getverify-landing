@@ -5,7 +5,7 @@ const maxValue = Math.max(...weeklyActivityData.map((d) => d.value));
 
 export default function WeeklyActivityChart() {
   return (
-    <div className="bg-white rounded-2xl border border-[#eef0f3] p-5 flex flex-col">
+    <div className="bg-white rounded-2xl border border-[#eef0f3] p-5">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-[15px] text-dark-teal/80 font-semibold tracking-tight">
@@ -17,7 +17,7 @@ export default function WeeklyActivityChart() {
       </div>
 
       {/* Bar chart */}
-      <div className="flex items-end gap-3 h-[160px] px-1 flex-1">
+      <div className="flex items-end gap-3 h-[120px] px-1">
         {weeklyActivityData.map((d) => {
           const isMax = d.value === maxValue;
           const pct = (d.value / maxValue) * 100;

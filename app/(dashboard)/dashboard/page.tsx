@@ -3,7 +3,6 @@ import DashboardHeader from "./_components/dashboard-header";
 import StatCard from "./_components/stat-card";
 import DocumentsProcessedChart from "./_components/documents-processed-chart";
 import WeeklyActivityChart from "./_components/weekly-activity-chart";
-import ContractorsByIndustry from "./_components/contractors-by-industry";
 import ComplianceRateGauge from "./_components/compliance-rate-gauge";
 import RecentDocumentsTable from "./_components/recent-documents-table";
 import AIAssistantCard from "./_components/ai-assistant-card";
@@ -20,16 +19,13 @@ export default function DashboardPage() {
         ))}
       </div>
 
-      {/* Line chart + Bar chart */}
+      {/* Chart (with contractors nested) + Bar chart & Gauge stacked */}
       <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-4">
         <DocumentsProcessedChart />
-        <WeeklyActivityChart />
-      </div>
-
-      {/* Segments + Gauge */}
-      <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-4">
-        <ContractorsByIndustry />
-        <ComplianceRateGauge />
+        <div className="flex flex-col gap-4">
+          <WeeklyActivityChart />
+          <ComplianceRateGauge />
+        </div>
       </div>
 
       {/* Table + AI assistant */}

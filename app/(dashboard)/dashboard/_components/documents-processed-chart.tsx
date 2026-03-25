@@ -1,7 +1,7 @@
 "use client";
 
 import { TrendingUp, MoreHorizontal } from "lucide-react";
-import { documentsProcessedData } from "./mock-data";
+import { documentsProcessedData, contractorsByIndustry } from "./mock-data";
 
 const W = 500;
 const H = 180;
@@ -156,6 +156,52 @@ export default function DocumentsProcessedChart() {
         <div className="flex items-center gap-1.5">
           <span className="w-2.5 h-2.5 rounded-full bg-light-teal" />
           <span className="text-[11px] text-dark-teal/50 font-medium">Mes anterior</span>
+        </div>
+      </div>
+
+      {/* Contratistas por Rubro — nested section */}
+      <div className="mt-5 pt-5 border-t border-[#eef0f3]">
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="text-[15px] text-dark-teal/80 font-semibold tracking-tight">
+            Contratistas por Rubro
+          </h3>
+          <button type="button" className="text-dark-teal/30 hover:text-dark-teal/60 transition-colors">
+            <MoreHorizontal className="w-5 h-5" strokeWidth={1.8} />
+          </button>
+        </div>
+
+        <div className="grid grid-cols-3 gap-3">
+          {contractorsByIndustry.map((seg) => {
+            const pct = Math.round((seg.count / seg.total) * 100);
+            return (
+              <div key={seg.label} className="relative">
+                <div className="flex items-center gap-2.5 mb-1">
+                  <div
+                    className="w-8 h-8 rounded-lg flex items-center justify-center"
+                    style={{ backgroundColor: seg.color + "15" }}
+                  >
+                    <seg.icon
+                      className="w-4 h-4"
+                      style={{ color: seg.color }}
+                      strokeWidth={1.8}
+                    />
+                  </div>
+                  <span className="text-[20px] font-bold tracking-[-0.02em] text-dark-teal leading-none">
+                    {seg.count}
+                  </span>
+                </div>
+                <span className="text-[12px] text-dark-teal/45 font-medium block mb-2 ml-[42px]">
+                  {seg.label}
+                </span>
+                <div className="h-[4px] rounded-full bg-dark-teal/5">
+                  <div
+                    className="h-full rounded-full"
+                    style={{ width: `${pct}%`, backgroundColor: seg.color }}
+                  />
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
