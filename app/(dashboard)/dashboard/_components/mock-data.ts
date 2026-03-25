@@ -19,32 +19,32 @@ export type StatCardData = {
 };
 
 export const statCards: StatCardData[] = [
-  { title: "Contratistas Activos", value: "156", change: 12.5, icon: Users },
-  { title: "Documentos Vigentes", value: "1.284", change: 8.2, icon: FileCheck },
-  { title: "Alertas Pendientes", value: "23", change: -15.3, icon: AlertTriangle },
-  { title: "Docs. por Vencer", value: "47", change: 5.1, icon: Clock },
+  { title: "Contratistas Activos", value: "118", change: 12.5, icon: Users },
+  { title: "Documentos Vigentes", value: "964", change: 8.2, icon: FileCheck },
+  { title: "Alertas Pendientes", value: "17", change: -15.3, icon: AlertTriangle },
+  { title: "Docs. por Vencer", value: "35", change: 5.1, icon: Clock },
 ];
 
 // --- Documents Processed (line chart) ---
 
 export const documentsProcessedData = {
   labels: ["01 Mar", "05 Mar", "09 Mar", "13 Mar", "17 Mar", "21 Mar", "25 Mar"],
-  thisMonth: [120, 185, 160, 220, 195, 250, 230],
-  lastMonth: [95, 140, 130, 165, 155, 180, 170],
-  totalThisMonth: "2.847",
+  thisMonth: [90, 139, 120, 165, 146, 188, 173],
+  lastMonth: [71, 105, 98, 124, 116, 135, 128],
+  totalThisMonth: "2.136",
   changePercent: 18.4,
 };
 
 // --- Weekly Activity (bar chart) ---
 
 export const weeklyActivityData = [
-  { day: "Lun", value: 45 },
-  { day: "Mar", value: 62 },
-  { day: "Mie", value: 55 },
-  { day: "Jue", value: 78 },
-  { day: "Vie", value: 70 },
-  { day: "Sab", value: 25 },
-  { day: "Dom", value: 12 },
+  { day: "Lun", value: 34 },
+  { day: "Mar", value: 47 },
+  { day: "Mie", value: 41 },
+  { day: "Jue", value: 59 },
+  { day: "Vie", value: 53 },
+  { day: "Sab", value: 19 },
+  { day: "Dom", value: 9 },
 ];
 
 // --- Contractors by Industry (segments) ---
@@ -58,9 +58,9 @@ export type IndustrySegment = {
 };
 
 export const contractorsByIndustry: IndustrySegment[] = [
-  { label: "Construccion", count: 68, total: 156, color: "#6581EA", icon: HardHat },
-  { label: "Servicios", count: 52, total: 156, color: "#67B4C1", icon: Wrench },
-  { label: "Transporte", count: 36, total: 156, color: "#F59E0B", icon: Truck },
+  { label: "Construccion", count: 51, total: 118, color: "#6581EA", icon: HardHat },
+  { label: "Servicios", count: 39, total: 118, color: "#67B4C1", icon: Wrench },
+  { label: "Transporte", count: 28, total: 118, color: "#F59E0B", icon: Truck },
 ];
 
 // --- Compliance Rate (gauge) ---
