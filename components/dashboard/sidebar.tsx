@@ -42,15 +42,15 @@ export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
 
         {/* Logo */}
         <div className="flex items-center justify-between px-6 h-[72px] shrink-0 border-b border-[#eef0f3]">
-          <div className="flex items-center gap-2.5">
+          <div className="flex items-center gap-3">
             <Image
-              src="/brand/logo-icon.png"
+              src="/brand/logo-icon-dark.png"
               alt="Verify"
               width={180}
               height={180}
               className="size-8 shrink-0 object-cover"
             />
-            <span className="text-[17px] font-bold tracking-[-0.01em] text-[#1a1a2e]">Verify</span>
+            <span className="text-[17px] font-semibold tracking-wide text-[#1a1a2e]">Verify</span>
           </div>
           <div className="flex items-center">
             <button className="hidden lg:flex w-7 h-7 items-center justify-center text-gray-400 hover:bg-gray-50 rounded-lg transition-colors">
