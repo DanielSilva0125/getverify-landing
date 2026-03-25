@@ -34,7 +34,7 @@ export default function DocumentsProcessedChart() {
     <div className="bg-white rounded-2xl border border-[#eef0f3] p-5">
       {/* Header */}
       <div className="flex items-start justify-between mb-1">
-        <h3 className="text-[15px] font-semibold text-dark-teal">
+        <h3 className="text-[15px] text-dark-teal/80 font-semibold tracking-tight">
           Documentos Procesados
         </h3>
         <button type="button" className="text-dark-teal/30 hover:text-dark-teal/60 transition-colors">

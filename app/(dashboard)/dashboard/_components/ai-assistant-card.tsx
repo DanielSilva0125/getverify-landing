@@ -13,7 +13,7 @@ export default function AIAssistantCard() {
 
       {/* Header */}
       <div className="flex items-center justify-between mb-6 relative">
-        <h3 className="text-[15px] font-semibold text-white">Asistente IA</h3>
+        <h3 className="text-[15px] font-semibold tracking-tight text-white">Asistente IA</h3>
         <button type="button" className="text-white/30 hover:text-white/60 transition-colors">
           <Maximize2 className="w-4 h-4" strokeWidth={2} />
         </button>

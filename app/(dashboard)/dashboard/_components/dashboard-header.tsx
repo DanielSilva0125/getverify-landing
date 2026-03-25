@@ -15,7 +15,7 @@ export default function DashboardHeader() {
           <CalendarDays className="w-4 h-4" strokeWidth={1.8} />
           <span>01 Mar - 25 Mar 2026</span>
           <span className="text-dark-teal/30">|</span>
-          <span className="text-dark-teal/50">Ultimos 30 dias</span>
+          <span className="text-dark-teal/50">Últimos 30 dias</span>
         </div>
 
         <button type="button" className={btnClass}>
