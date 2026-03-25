@@ -18,6 +18,7 @@ export default function Footer() {
               alt="Verify"
               width={1124}
               height={292}
+              loading="lazy"
               className="block h-auto w-[132px] sm:w-[148px]"
               sizes="(min-width: 640px) 148px, 132px"
             />

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function MacWindowMockup() {
   return (
     <div className="w-full max-w-[900px] mx-auto rounded-2xl overflow-hidden mockup-glow border border-black/[0.06]">
@@ -18,9 +20,13 @@ export default function MacWindowMockup() {
 
       {/* Body */}
       <div className="bg-[#F8F9FC]">
-        <img
+        <Image
           src="/mockup.webp"
           alt="Verify dashboard preview"
+          width={2772}
+          height={1668}
+          priority
+          sizes="(max-width: 640px) 100vw, 900px"
           className="w-full h-auto block"
         />
       </div>
