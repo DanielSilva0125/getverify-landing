@@ -94,7 +94,7 @@ export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
 
         {/* Bottom Section */}
         <div className="px-4 pb-6 pt-2 shrink-0">
-          <div className="space-y-0.5 mb-6">
+          <div className="space-y-0.5">
             {bottomNav.map((item) => {
               if ("disabled" in item && item.disabled) {
                 return (
@@ -130,25 +130,6 @@ export default function Sidebar({ isOpen, setIsOpen }: SidebarProps) {
                 </Link>
               );
             })}
-          </div>
-
-          {/* Premium Badge */}
-          <div className="bg-gradient-to-br from-[#1b2f4f] to-[#0a1529] rounded-2xl p-5 text-white relative overflow-hidden group hover:shadow-lg transition-all">
-            <div className="absolute -top-10 -right-10 w-24 h-24 bg-blue-500/20 blur-2xl rounded-full" />
-            <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-blue-400/20 to-transparent rounded-bl-full" />
-
-            <div className="relative">
-              <div className="w-7 h-7 bg-blue-500/20 rounded-lg flex items-center justify-center mb-3">
-                <Box className="w-4 h-4 text-blue-400" />
-              </div>
-              <h4 className="font-semibold text-[15px] mb-1.5">Upgrade to Premium!</h4>
-              <p className="text-[12px] text-blue-100/70 mb-4 leading-relaxed pr-2">
-                Upgrade your account and unlock all of the benefits.
-              </p>
-              <button className="w-full bg-blue-600 hover:bg-blue-500 text-white text-[13px] font-medium py-2 rounded-xl transition-colors shadow-sm shadow-blue-900">
-                Upgrade premium
-              </button>
-            </div>
           </div>
         </div>
       </aside>

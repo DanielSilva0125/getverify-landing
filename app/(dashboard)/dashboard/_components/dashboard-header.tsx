@@ -1,7 +1,8 @@
+import { Button } from "@heroui/button";
 import { CalendarDays, Download, LayoutGrid } from "lucide-react";
 
 const btnClass =
-  "inline-flex items-center gap-2 border border-[#eef0f3] bg-white hover:bg-accent/5 text-dark-teal/70 text-[13px] font-medium rounded-xl px-4 py-2 transition-colors";
+  "inline-flex items-center gap-2 border border-[#eef0f3] bg-white text-dark-teal/70 text-[13px] font-medium rounded-full px-4 py-2";
 
 export default function DashboardHeader() {
   return (
@@ -15,21 +16,22 @@ export default function DashboardHeader() {
           <CalendarDays className="w-4 h-4" strokeWidth={1.8} />
           <span>01 Mar - 25 Mar 2026</span>
           <span className="text-dark-teal/30">|</span>
-          <span className="text-dark-teal/50">Últimos 30 dias</span>
+          <span className="text-dark-teal/50">Últimos 30 días</span>
         </div>
 
-        <button type="button" className={btnClass}>
+        <Button className={btnClass}>
           <LayoutGrid className="w-4 h-4" strokeWidth={1.8} />
           Agregar widget
-        </button>
+        </Button>
 
-        <button
-          type="button"
-          className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white text-[13px] font-medium rounded-xl px-4 py-2 transition-colors"
+        <Button
+          variant="shadow"
+          radius="full"
+          className="bg-accent items-center gap-2 text-white text-[13px] font-medium h-9"
         >
           <Download className="w-4 h-4" strokeWidth={2} />
           Exportar
-        </button>
+        </Button>
       </div>
     </div>
   );
