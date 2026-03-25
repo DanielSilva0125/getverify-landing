@@ -33,10 +33,13 @@ export default function WeeklyActivityChart() {
                 </span>
               )}
               <div
-                className={`w-full rounded-lg transition-colors ${
-                  isMax ? "bg-accent" : "bg-accent/15"
-                }`}
-                style={{ height: `${pct}%` }}
+                className="w-full rounded-lg"
+                style={{
+                  height: `${pct}%`,
+                  background: isMax
+                    ? "linear-gradient(180deg, #8DA4F8, #6581EA)"
+                    : "linear-gradient(180deg, #e8eaf0, #dddfe6)",
+                }}
               />
               <span
                 className={`text-[11px] font-medium ${

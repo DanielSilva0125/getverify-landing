@@ -72,8 +72,16 @@ export default function DocumentsProcessedChart() {
           >
             <defs>
               <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stopColor="#6581EA" stopOpacity="0.15" />
+                <stop offset="0%" stopColor="#8DA4F8" stopOpacity="0.18" />
                 <stop offset="100%" stopColor="#6581EA" stopOpacity="0" />
+              </linearGradient>
+              <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stopColor="#8DA4F8" />
+                <stop offset="100%" stopColor="#6581EA" />
+              </linearGradient>
+              <linearGradient id="lineGradDashed" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stopColor="#91D4DE" />
+                <stop offset="100%" stopColor="#67B4C1" />
               </linearGradient>
             </defs>
 
@@ -103,7 +111,7 @@ export default function DocumentsProcessedChart() {
             <polyline
               points={toPoints(lastMonth)}
               fill="none"
-              stroke="#67B4C1"
+              stroke="url(#lineGradDashed)"
               strokeWidth="2"
               strokeDasharray="6 4"
               strokeLinecap="round"
@@ -114,7 +122,7 @@ export default function DocumentsProcessedChart() {
             <polyline
               points={toPoints(thisMonth)}
               fill="none"
-              stroke="#6581EA"
+              stroke="url(#lineGrad)"
               strokeWidth="2.5"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -196,7 +204,10 @@ export default function DocumentsProcessedChart() {
                 <div className="h-[4px] rounded-full bg-dark-teal/5">
                   <div
                     className="h-full rounded-full"
-                    style={{ width: `${pct}%`, backgroundColor: seg.color }}
+                    style={{
+                      width: `${pct}%`,
+                      background: `linear-gradient(90deg, ${seg.color}, ${seg.colorEnd})`,
+                    }}
                   />
                 </div>
               </div>

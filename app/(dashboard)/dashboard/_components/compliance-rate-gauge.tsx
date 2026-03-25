@@ -23,6 +23,12 @@ export default function ComplianceRateGauge() {
       <div className="flex-1 flex flex-col items-center justify-center">
         <div className="relative w-full max-w-[220px]">
           <svg viewBox="0 0 200 115" className="w-full h-auto overflow-visible">
+            <defs>
+              <linearGradient id="gaugeGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stopColor="#8DA4F8" />
+                <stop offset="100%" stopColor="#6581EA" />
+              </linearGradient>
+            </defs>
             {/* Background track */}
             <circle
               cx="100"
@@ -41,7 +47,7 @@ export default function ComplianceRateGauge() {
               cy="100"
               r={R}
               fill="none"
-              stroke="#6581EA"
+              stroke="url(#gaugeGrad)"
               strokeWidth="14"
               strokeDasharray={`${SEMI} ${CIRCUMFERENCE}`}
               strokeDashoffset={offset}

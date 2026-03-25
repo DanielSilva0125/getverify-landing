@@ -27,7 +27,8 @@ export default function DashboardHeader() {
         <Button
           variant="shadow"
           radius="full"
-          className="bg-accent items-center gap-2 text-white text-[13px] font-medium h-9"
+          style={{ background: "linear-gradient(135deg, #6581EA, #5A72D6)" }}
+          className="items-center gap-2 text-white text-[13px] font-medium h-9"
         >
           <Download className="w-4 h-4" strokeWidth={2} />
           Exportar

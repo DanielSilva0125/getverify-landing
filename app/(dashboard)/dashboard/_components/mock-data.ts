@@ -54,13 +54,14 @@ export type IndustrySegment = {
   count: number;
   total: number;
   color: string;
+  colorEnd: string;
   icon: LucideIcon;
 };
 
 export const contractorsByIndustry: IndustrySegment[] = [
-  { label: "Construccion", count: 51, total: 118, color: "#6581EA", icon: HardHat },
-  { label: "Servicios", count: 39, total: 118, color: "#67B4C1", icon: Wrench },
-  { label: "Transporte", count: 28, total: 118, color: "#F59E0B", icon: Truck },
+  { label: "Construccion", count: 51, total: 118, color: "#6581EA", colorEnd: "#8DA4F8", icon: HardHat },
+  { label: "Servicios", count: 39, total: 118, color: "#67B4C1", colorEnd: "#91D4DE", icon: Wrench },
+  { label: "Transporte", count: 28, total: 118, color: "#F59E0B", colorEnd: "#FBBF24", icon: Truck },
 ];
 
 // --- Compliance Rate (gauge) ---
