@@ -2,7 +2,6 @@
 
 import { FileText, Bell, Download } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
-import { ShiningText } from "@/components/ui/shining-text";
 
 const topFeatures = [
   {
@@ -245,14 +244,19 @@ export default function Features() {
     <section
       id="plataforma"
       aria-label="Funcionalidades de la plataforma Verify"
-      className="px-6 pt-4 sm:pt-6 pb-20 sm:pb-28"
+      className="px-6 pt-10 sm:pt-14 pb-20 sm:pb-28 bg-[#F9FBFC]"
     >
-      <ScrollReveal className="mx-auto max-w-4xl text-center">
-        <h2 className="text-[28px] sm:text-[36px] lg:text-[40px] tracking-[-0.025em] leading-[1.15] mb-10 font-normal">
-          <span className="text-[#f1f1f1]">Menos supuestos,</span>
-          <br />
-          <ShiningText text="más certezas." className="text-[28px] sm:text-[36px] lg:text-[40px] font-bold tracking-[-0.025em] [background-image:linear-gradient(110deg,#fff,35%,#a8dce5,50%,#fff,75%,#fff)]" />
+      <ScrollReveal className="mx-auto max-w-4xl text-center mb-8">
+        <span className="inline-block rounded-full bg-accent/[0.08] px-3.5 py-1 text-[13px] font-semibold text-accent mb-4">
+          Plataforma
+        </span>
+        <h2 className="text-[28px] sm:text-[36px] lg:text-[40px] tracking-[-0.025em] text-dark-teal leading-[1.15] mb-3">
+          <span className="font-normal">Menos supuestos,</span>
+          <span className="font-bold">{" "}más certezas.</span>
         </h2>
+        <p className="text-[15px] sm:text-[17px] leading-[1.6] text-dark-teal/50 max-w-[500px] mx-auto">
+          Herramientas diseñadas para cubrir cada punto critico del cumplimiento documental.
+        </p>
       </ScrollReveal>
 
       <div className="mx-auto max-w-4xl flex flex-col gap-4">

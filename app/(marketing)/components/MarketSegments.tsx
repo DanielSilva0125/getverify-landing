@@ -32,7 +32,7 @@ export default function MarketSegments() {
     <section
       id="segmentos"
       aria-label="Segmentos de mercado de Verify"
-      className="px-6 py-20 sm:py-16 relative overflow-hidden"
+      className="bg-[#F7F7F7] px-6 py-20 sm:py-16 relative overflow-hidden"
     >
       {/* Subtle radial glow to tie in with the hero section */}
       <div
