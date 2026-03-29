@@ -5,6 +5,7 @@ import Features from "./components/Features";
 import MarketSegments from "./components/MarketSegments";
 import WaitlistSection from "./components/WaitlistSection";
 import CallToAction from "./components/CallToAction";
+import { GradientBackground } from "@/components/ui/gradient-background";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -48,8 +49,10 @@ export default function Home() {
 
       <HeroSection />
 
-      <PainPoints />
-      <Features />
+      <GradientBackground className="min-h-0">
+        <PainPoints />
+        <Features />
+      </GradientBackground>
       <MarketSegments />
       <WaitlistSection />
       <CallToAction />
