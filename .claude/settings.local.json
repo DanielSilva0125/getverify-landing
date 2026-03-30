@@ -1,12 +1,13 @@
 {
+  "permissions": {
+    "allow": [
+      "Bash(cmd.exe /c start http://localhost:3001)",
+      "Bash(git push:*)"
+    ]
+  },
   "enableAllProjectMcpServers": true,
   "enabledMcpjsonServers": [
     "stitch",
     "supabase"
-  ],
-  "permissions": {
-    "allow": [
-      "Bash(cmd.exe /c start http://localhost:3001)"
-    ]
-  }
+  ]
 }
