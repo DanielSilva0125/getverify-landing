@@ -10,7 +10,7 @@ export default function Navbar() {
       <nav className="mx-auto flex w-full max-w-[1200px] items-center justify-between px-6 py-4 lg:px-10">
         <Link href="/" aria-label="Verify" className="flex shrink-0 items-center py-1">
           <Image
-            src="/brand/logo-dark.png"
+            src="/brand/1 finality4.svg"
             alt="Verify"
             width={1124}
             height={292}

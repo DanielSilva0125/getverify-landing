@@ -93,6 +93,7 @@ export default function RootLayout({
             "https://app.getverify.cl",
           ]}
           afterSignOutUrl="https://www.getverify.cl"
+          appearance={{ elements: { developmentModeNotice: { display: "none" } } }}
         >
           <Providers>{children}</Providers>
         </ClerkProvider>

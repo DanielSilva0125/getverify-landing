@@ -1,6 +1,7 @@
 "use client";
 
 import { Building2, HardHat, Network } from "lucide-react";
+import { ShiningText } from "@/components/ui/shining-text";
 import ScrollReveal from "./ScrollReveal";
 
 const segments = [
@@ -44,43 +45,37 @@ export default function MarketSegments() {
       />
 
       <ScrollReveal className="relative mx-auto max-w-4xl text-center mb-16">
-        <span className="inline-block rounded-full bg-accent/[0.08] px-3.5 py-1 text-[13px] font-semibold text-accent mb-4">
-          Segmentos
-        </span>
-        <h2 className="text-[28px] sm:text-[36px] lg:text-[40px] tracking-[-0.025em] text-dark-teal leading-[1.15] mb-4">
-          <span className="font-normal">Control que escala </span>
-          <span className="font-bold">con tu operación.</span>
+        <h2 className="text-[28px] sm:text-[36px] lg:text-[40px] tracking-[-0.025em] text-dark-teal leading-[0.98] sm:leading-[0.95] lg:leading-[0.88]">
+          <span className="font-normal">Control que escala</span>
+          <br />
+          <ShiningText text="con tu operación." duration={10} className="text-[28px] sm:text-[36px] lg:text-[40px] font-bold tracking-[-0.025em]" />
         </h2>
-        <p className="text-[16px] sm:text-[18px] leading-[1.6] text-dark-teal/50 max-w-[540px] mx-auto">
-          Diseñado para organizaciones que necesitan controlar el cumplimiento
-          documental de forma seria y estructurada.
-        </p>
       </ScrollReveal>
 
       <div className="relative mx-auto max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-4">
         {segments.map(({ icon: Icon, title, description, tags }, i) => (
           <ScrollReveal key={title} delay={i * 0.1} className="h-full">
-            <div className="group flex flex-col bg-white border border-dark-teal/[0.06] rounded-[24px] px-8 py-6 border-2 border-dark-teal/20 transition-all duration-300 h-full">
-              <div className="w-12 h-12 flex items-center justify-center bg-light-gray rounded-2xl border border-dark-teal/[0.06] mb-5 transition-all duration-300">
-                <Icon className="w-[22px] h-[22px] text-accent" strokeWidth={1.8} />
+            <div className="group flex flex-col bg-white border-2 border-dark-teal/20 rounded-[24px] px-8 py-6 transition-all duration-300 h-full hover:bg-[#67b4c1] hover:border-[#67b4c1]">
+              <div className="w-12 h-12 flex items-center justify-center bg-light-gray rounded-2xl border border-dark-teal/[0.06] mb-5 transition-all duration-300 group-hover:bg-white/20 group-hover:border-white/20">
+                <Icon className="w-[22px] h-[22px] text-[#67b4c1] transition-colors duration-300 group-hover:text-white" strokeWidth={1.8} />
               </div>
 
-              <h3 className="text-[17px] tracking-[-0.01em] font-semibold text-dark-teal mb-2.5">
+              <h3 className="text-[17px] tracking-[-0.01em] font-semibold text-dark-teal mb-2.5 transition-colors duration-300 group-hover:text-white">
                 {title}
               </h3>
-              <p className="text-[15px] leading-[1.6] text-dark-teal/60 mb-6 flex-grow">
+              <p className="text-[15px] leading-[1.6] text-dark-teal/60 mb-6 flex-grow transition-colors duration-300 group-hover:text-white/80">
                 {description}
               </p>
 
-              <div className="w-full h-[1px] bg-dark-teal/[0.04] mb-3" />
+              <div className="w-full h-[1px] bg-dark-teal/[0.04] mb-3 transition-colors duration-300 group-hover:bg-white/20" />
 
               <div className="flex flex-wrap gap-1">
                 {tags.map((tag) => (
                   <span
                     key={tag}
-                    className="inline-flex items-center gap-1.5 bg-dark-teal/[0.03] text-dark-teal/60 text-[12px] font-medium tracking-[0.01em] rounded-full px-2.5 py-1.5 transition-colors group-hover:bg-dark-teal/[0.05]"
+                    className="inline-flex items-center gap-1.5 bg-dark-teal/[0.03] text-dark-teal/60 text-[12px] font-medium tracking-[0.01em] rounded-full px-2.5 py-1.5 transition-all duration-300 group-hover:bg-white/20 group-hover:text-white"
                   >
-                    <div className="size-1.25 rounded-full bg-accent/40" />
+                    <div className="size-1.25 rounded-full bg-accent/40 group-hover:bg-white/60" />
                     {tag}
                   </span>
                 ))}

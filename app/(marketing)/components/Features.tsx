@@ -2,6 +2,7 @@
 
 import { FileText, Bell, Download } from "lucide-react";
 import ScrollReveal from "./ScrollReveal";
+import { ShiningText } from "@/components/ui/shining-text";
 
 const topFeatures = [
   {
@@ -244,22 +245,17 @@ export default function Features() {
     <section
       id="plataforma"
       aria-label="Funcionalidades de la plataforma Verify"
-      className="px-6 pt-10 sm:pt-14 pb-20 sm:pb-28 bg-[#F9FBFC]"
+      className="px-6 pt-10 pb-20 sm:pb-28"
     >
-      <ScrollReveal className="mx-auto max-w-4xl text-center mb-8">
-        <span className="inline-block rounded-full bg-accent/[0.08] px-3.5 py-1 text-[13px] font-semibold text-accent mb-4">
-          Plataforma
-        </span>
-        <h2 className="text-[28px] sm:text-[36px] lg:text-[40px] tracking-[-0.025em] text-dark-teal leading-[1.15] mb-3">
-          <span className="font-normal">Menos supuestos,</span>
-          <span className="font-bold">{" "}más certezas.</span>
+      <ScrollReveal className="mx-auto max-w-6xl text-center">
+        <h2 className="text-[28px] sm:text-[36px] lg:text-[40px] tracking-[-0.025em] leading-[0.98] sm:leading-[0.95] lg:leading-[0.88] mb-10 font-normal">
+          <span className="text-[#f1f1f1]">Menos supuestos,</span>
+          <br />
+          <ShiningText text="más certezas." duration={4} repeatDelay={0} className="text-[28px] sm:text-[36px] lg:text-[40px] font-bold tracking-[-0.025em] [background-image:linear-gradient(110deg,#f1f1f1_40%,#ffffff_50%,#f1f1f1_60%)]" />
         </h2>
-        <p className="text-[15px] sm:text-[17px] leading-[1.6] text-dark-teal/50 max-w-[500px] mx-auto">
-          Herramientas diseñadas para cubrir cada punto critico del cumplimiento documental.
-        </p>
       </ScrollReveal>
 
-      <div className="mx-auto max-w-4xl flex flex-col gap-4">
+      <div className="mx-auto max-w-6xl flex flex-col gap-4">
         {/* Top row: 2 large cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {topFeatures.map((feature, i) => (

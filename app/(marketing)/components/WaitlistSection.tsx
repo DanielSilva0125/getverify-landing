@@ -7,6 +7,7 @@ import { Button } from "@heroui/button";
 import { Form } from "@heroui/form";
 import { Input } from "@heroui/input";
 import ScrollReveal from "./ScrollReveal";
+import { ShiningText } from "@/components/ui/shining-text";
 import { joinWaitlist, type WaitlistState } from "@/app/actions/waitlist";
 
 const initialState: WaitlistState = { status: "idle", message: "" };
@@ -20,7 +21,7 @@ export default function WaitlistSection() {
   return (
     <section
       id="waitlist"
-      className="bg-[#F7F8FE] px-6 sm:px-8 lg:px-10 pt-10 sm:pt-14 pb-20 sm:pb-24 relative overflow-hidden"
+      className="bg-[#F7F8FE] px-6 sm:px-8 lg:px-10 pt-4 sm:pt-6 pb-20 sm:pb-24 relative overflow-hidden"
     >
       {/* Soft accent radial glow */}
       <div
@@ -34,16 +35,16 @@ export default function WaitlistSection() {
       <div className="relative mx-auto max-w-xl text-center">
         {/* Badge */}
         <ScrollReveal>
-          <div className="inline-flex items-center gap-2 rounded-full bg-accent/[0.08] px-4 py-1.5 text-[13px] font-semibold text-accent mb-6">
+          <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-[13px] font-semibold mb-6" style={{ background: 'rgba(103,180,193,0.12)', color: '#67b4c1' }}>
             Acceso anticipado
           </div>
         </ScrollReveal>
 
         {/* Heading */}
         <ScrollReveal delay={0.1}>
-          <h2 className="text-[28px] sm:text-[36px] lg:text-[40px] tracking-[-0.025em] text-dark-teal leading-[1.15] mb-4">
+          <h2 className="text-[28px] sm:text-[36px] lg:text-[40px] tracking-[-0.025em] text-dark-teal leading-[0.98] sm:leading-[0.95] lg:leading-[0.88] mb-4">
             <span className="font-normal">Sé de los primeros </span>
-            <span className="font-semibold">en probarlo.</span>
+            <ShiningText text="en probarlo." duration={10} className="text-[28px] sm:text-[36px] lg:text-[40px] font-bold tracking-[-0.025em]" />
           </h2>
         </ScrollReveal>
 
@@ -102,7 +103,7 @@ export default function WaitlistSection() {
                   <Button
                     type="submit"
                     isLoading={isPending}
-                    className="btn-glow bg-accent hover:bg-[#5570e0] text-white font-medium px-4 h-11 text-[14px] tracking-[-0.01em] rounded-2xl shrink-0 w-full sm:w-auto"
+                    className="btn-glow bg-[#67b4c1] hover:bg-[#55a0ad] text-white font-medium px-4 h-11 text-[14px] tracking-[-0.01em] rounded-2xl shrink-0 w-full sm:w-auto"
                   >
                     {!isPending && (
                       <>
@@ -137,12 +138,6 @@ export default function WaitlistSection() {
           </AnimatePresence>
         </ScrollReveal>
 
-        {/* Privacy note */}
-        <ScrollReveal delay={0.25}>
-          <p className="text-[13px] text-dark-teal/30 mt-8">
-            Sin spam. Solo una notificación cuando lancemos.
-          </p>
-        </ScrollReveal>
       </div>
     </section>
   );
