@@ -1,8 +1,6 @@
-"use client";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@heroui/button";
-import { SignInButton } from "@clerk/nextjs";
 
 export default function Navbar() {
   return (
@@ -22,21 +20,15 @@ export default function Navbar() {
 
         {/* Right: Actions */}
         <div className="flex items-center">
-          <SignInButton
-            mode="redirect"
-            fallbackRedirectUrl={process.env.NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL || "/dashboard"}
-            forceRedirectUrl={process.env.NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL || "/dashboard"}
+          <Button
+            as={Link}
+            href="#waitlist"
+            variant="light"
+            radius="lg"
+            className="inline-flex text-[13px] font-medium text-dark-teal/50 hover:text-dark-teal"
           >
-            <Button
-              as="a"
-              href="#"
-              variant="light"
-              radius="lg"
-              className="inline-flex text-[13px] font-medium text-dark-teal/50 hover:text-dark-teal"
-            >
-              Iniciar sesión
-            </Button>
-          </SignInButton>
+            Iniciar sesión
+          </Button>
         </div>
       </nav>
     </header>

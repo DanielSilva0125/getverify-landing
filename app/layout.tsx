@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Figtree, Geist_Mono } from "next/font/google";
-import { ClerkProvider } from "@clerk/nextjs";
-import { esES } from "@clerk/localizations";
 import { SITE_URL } from "@/lib/site-config";
 import Providers from "./providers";
 import "./globals.css";
@@ -86,17 +84,7 @@ export default function RootLayout({
   return (
     <html lang="es" className={figtree.className}>
       <body className={`${geistMono.variable} antialiased`}>
-        <ClerkProvider
-          localization={esES}
-          allowedRedirectOrigins={[
-            "http://app.getverify.local:3000",
-            "https://app.getverify.cl",
-          ]}
-          afterSignOutUrl="https://www.getverify.cl"
-          appearance={{ elements: { developmentModeNotice: { display: "none" } } }}
-        >
-          <Providers>{children}</Providers>
-        </ClerkProvider>
+        <Providers>{children}</Providers>
         <Analytics />
         <SpeedInsights />
       </body>
